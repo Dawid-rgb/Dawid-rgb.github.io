@@ -563,6 +563,12 @@ img {
 .caret {
     margin-left: auto;
     color: #00f3ff;
+    display: inline-block;
+    transition: transform 0.1s ease;
+}
+
+.media-entry.active .caret {
+  transform: rotate(90deg);
 }
 
 .media-details {
