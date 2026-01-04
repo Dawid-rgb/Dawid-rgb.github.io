@@ -12,6 +12,14 @@ const projects = [
     { name: "omicronbot.js", target: "omicronbot" }
 ];
 
+const skills = [
+    "HTML / CSS",
+    "JavaScript",
+    "Java",
+    "C / C++",
+    "SQL",
+];
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -36,18 +44,6 @@ function outputHTML(html, className = "terminal-output") {
     scrollToBottom();
 }
 
-async function typeLine(text, className = "") {
-    const line = document.createElement("div");
-    line.className = className;
-    terminal.appendChild(line);
-
-    for (let char of text) {
-        line.textContent += char;
-        scrollToBottom();
-        await sleep(30);
-    }
-}
-
 async function prompt(command) {
     const line = document.createElement("div");
     line.innerHTML = `<span class="prompt">$</span> <span class="terminal-command"></span><span class="cursor"></span>`;
@@ -63,7 +59,6 @@ async function prompt(command) {
     }
 
     cursor.remove();
-    scrollToBottom();
 }
 
 function idlePrompt() {
@@ -73,17 +68,41 @@ function idlePrompt() {
     scrollToBottom();
 }
 
+async function runNeofetch() {
+    output("OS: DBOS x86_64");
+    output("Host: Portfolio Machine");
+    output("Kernel: 6.1.0-dev");
+    output("Shell: bash");
+
+    await sleep(300);
+    output("");
+
+    output(">> Compétences principales :", "terminal-info");
+    await sleep(300);
+    const bar = "OK";
+
+    skills.forEach(skill => {
+        output(skill);
+    });
+}
+
 async function runTerminal() {
     await prompt("whoami");
     await sleep(300);
 
     output("Dawid Banas");
-    await sleep(200);
+    await sleep(300);
     output(">> Passionné par le développement d'applications", "terminal-info");
-    await sleep(200);
+    await sleep(300);
     output(">> Curieux et toujours prêt à explorer de nouveaux outils et technologies.", "terminal-info");
 
-    await sleep(600);
+    await sleep(1000);
+
+    await prompt("neofetch");
+    await sleep(500);
+    runNeofetch();
+
+    await sleep(2000);
 
     await prompt("ls -la projets");
     await sleep(300);
@@ -94,16 +113,7 @@ async function runTerminal() {
         );
     });
 
-    await sleep(800);
-
-    await prompt("cat interets.txt");
-    await sleep(300);
-
-    output(
-        "Quand je ne code pas, j'aime explorer de nouvelles technologies et approfondir mes connaissances en informatique."
-    );
-
-    await sleep(800);
+    await sleep(600);
     idlePrompt();
 }
 
@@ -115,10 +125,7 @@ terminal.addEventListener("click", e => {
         if (project) {
             project.scrollIntoView({ behavior: "smooth", block: "center" });
             project.classList.add("highlight");
-
-            setTimeout(() => {
-                project.classList.remove("highlight");
-            }, 2000);
+            setTimeout(() => project.classList.remove("highlight"), 2000);
         }
     }
 });
