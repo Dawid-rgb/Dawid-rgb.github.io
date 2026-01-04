@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Dawid Banas</title>
+    <link rel="stylesheet" href="style/fonts.css">
+    <link rel="stylesheet" href="style/cyberpunk.css" id="theme-link">
+</head>
+<body>
+
+    <!-- TOPBAR -->
+    <div class="top-bar">
+        <div class="top-title">Dawid Banas</div>
+        <div class="top-buttons">
+            <select id="theme-selector">
+                <option value="style/cyberpunk.css">Cyberpunk</option>
+                <option value="style/main.css">Default</option>
+            </select>
+
+            <button data-target="apropos-window">A PROPOS</button>
+            <button data-target="experience-window">EXPERIENCE</button>
+            <button data-target="skills-window">COMPETENCES</button>
+            <button data-target="projets-window">PROJETS</button>
+            <button data-target="centres-window">CENTRES D'INTERET</button>
+        </div>
+    </div>
+
+    <!-- TITLE -->
+    <div class="title-container">
+        <div class="title-text">
+            <h1 class="led-scanline">DAWID BANAS</h1>
+            <h2>Étudiant en Informatique<br>Université de Lille</h2>
+        </div>
+    </div>
+
+    <div class="grid-layout">
+
+        <!-- LEFT COLUMN -->
+        <div class="left-col">
+
+            <!-- A PROPOS WINDOW -->
+            <div class="winbox" id="apropos-window">
+                <div class="win-header">
+                    <div class="title">
+                        <img src="img/window-icons/settings.png" width="22"> README.md
+                    </div>
+                    <div class="win-buttons linux-buttons">
+                        <button class="win-btn-lx minimize">━</button>
+                        <button class="win-btn-lx maximize">▢</button>
+                        <button class="win-btn-lx close">✕</button>
+                    </div>
+                </div>
+                <div class="win-content readme-content">
+                    <h1 class="readme-title">Bienvenue sur mon Portfolio</h1>
+                    <p>
+                        Passionné par le <b>développement web</b>, l’<b>ingénierie logicielle</b> et la <b>conception de jeux vidéo</b>, j’aime apprendre de nouvelles technologies et créer des projets concrets.<br>
+                        Ce portfolio présente mon parcours, mes compétences, mes projets et mes centres d’intérêt.
+                    </p>
+                    <details>
+                        <summary>Informations de contact</summary>
+                        <ul>
+                            <li><strong>Email</strong> : dawidbanaspro@gmail.com</li>
+                            <li><strong>GitHub</strong> : <a href="https://github.com/Dawid-rgb" target="_blank">lien</a></li>
+                            <li><strong>LinkedIn</strong> : <a href="https://www.linkedin.com/in/dawid-banas-a8849438a/" target="_blank">lien</a></li>
+                        </ul>
+                    </details>
+                </div>
+            </div>
+
+            <!-- TIMELINE EXPERIENCE/PARCOURS-->
+            <div class="winbox" id="experience-window">
+                <div class="win-header">
+                    <div class="title">
+                        <img src="img/window-icons/parcours.png" width="22"> EXPERIENCE ET PARCOURS
+                    </div>
+                    <div class="win-buttons linux-buttons">
+                        <button class="win-btn-lx minimize">━</button>
+                        <button class="win-btn-lx maximize">▢</button>
+                        <button class="win-btn-lx close">✕</button>
+                    </div>
+                </div>
+                <div class="win-content">
+
+                    <div class="timeline">
+
+                        <div class="timeline-item education">
+                            <div class="timeline-card">
+                                <div class="timeline-date">2024 — Aujourd’hui</div>
+                                <div class="timeline-title">BUT Informatique</div>
+                                <div class="timeline-location">
+                                    <img src="img/icons/localisation.png"> Université de Lille
+                                </div>
+                                <div class="timeline-desc">
+                                    Formation universitaire axée sur le développement logiciel, les systèmes informatiques,
+                                    les bases de données et l’utilisation d’environnements Linux.
+                                </div>
+                                <div class="timeline-tech">
+                                    <span class="tech-badge">Java</span>
+                                    <span class="tech-badge">C</span>
+                                    <span class="tech-badge">SQL</span>
+                                    <span class="tech-badge">HTML/CSS</span>
+                                    <span class="tech-badge">Linux Debian</span>
+                                </div>
+                                <span class="timeline-tag">Études</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item work">
+                            <div class="timeline-card">
+                                <div class="timeline-date">Été 2025</div>
+                                <div class="timeline-title">Développement Web</div>
+                                <div class="timeline-location">
+                                    <img src="img/icons/localisation.png"> Société M.E.I
+                                </div>
+                                <div class="timeline-desc">
+                                    Développement d’un site web pour l’entreprise M.E.I ainsi qu’une assistance
+                                    administrative incluant la gestion de documents et de tableaux.
+                                </div>
+                                <div class="timeline-tech">
+                                    <span class="tech-badge">HTML/CSS</span>
+                                    <span class="tech-badge">JavaScript</span>
+                                    <span class="tech-badge">Excel</span>
+                                    <span class="tech-badge">Word</span>
+                                </div>
+                                <span class="timeline-tag">Job d’été</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item work">
+                            <div class="timeline-card">
+                                <div class="timeline-date">Été 2024</div>
+                                <div class="timeline-title">Stage – SNCF Réseau</div>
+                                <div class="timeline-location">
+                                    <img src="img/icons/localisation.png"> SNCF Réseau – Lille
+                                </div>
+                                <div class="timeline-desc">
+                                    Contribution à la rédaction d’un dossier technique et participation
+                                    à la documentation du pilotage logiciel de l’entreprise.
+                                </div>
+                                <div class="timeline-tech">
+                                    <span class="tech-badge">Word</span>
+                                    <span class="tech-badge">Adobe Photoshop</span>
+                                </div>
+                                <span class="timeline-tag">Stage</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item education">
+                            <div class="timeline-card">
+                                <div class="timeline-date">2023 — 2024</div>
+                                <div class="timeline-title">École d’ingénieur IG2I</div>
+                                <div class="timeline-location">
+                                    <img src="img/icons/localisation.png"> Institut de Génie Informatique et Industriel (IG2I)
+                                </div>
+                                <div class="timeline-desc">
+                                    Formation pluridisciplinaire en informatique et ingénierie,
+                                    abordant la programmation bas niveau, le développement web et
+                                    les systèmes embarqués.
+                                </div>
+                                <div class="timeline-tech">
+                                    <span class="tech-badge">C</span>
+                                    <span class="tech-badge">HTML/CSS</span>
+                                    <span class="tech-badge">JavaScript</span>
+                                    <span class="tech-badge">SQL</span>
+                                    <span class="tech-badge">PHP</span>
+                                    <span class="tech-badge">Assembleur</span>
+                                    <span class="tech-badge">Raspberry Pi</span>
+                                </div>
+                                <span class="timeline-tag">Études</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="right-col">
+
+            <div class="winbox" id="terminal-window">
+                <div class="win-header">
+                    <div class="title">
+                        <img src="img/window-icons/terminal.png" width="22"> TERMINAL
+                    </div>
+                    <div class="win-buttons linux-buttons">
+                        <button class="win-btn-lx minimize">━</button>
+                        <button class="win-btn-lx maximize">▢</button>
+                        <button class="win-btn-lx close">✕</button>
+                    </div>
+                </div>
+                <div class="win-content terminal-content" id="terminal"></div>
+            </div>
+
+            <!-- COMPÉTENCES WINDOW -->
+            <div class="winbox" id="skills-window">
+                <div class="win-header">
+                    <div class="title">
+                        <img src="img/icons/skill.png" width="22"> COMPÉTENCES
+                    </div>
+                    <div class="win-buttons linux-buttons">
+                        <button class="win-btn-lx minimize">━</button>
+                        <button class="win-btn-lx maximize">▢</button>
+                        <button class="win-btn-lx close">✕</button>
+                    </div>
+                </div>
+
+                <div class="win-content">
+                    <div class="media-list">
+
+                        <div class="media-entry" data-target="languages">
+                            <img class="media-icon" src="img/icons/folder_close.png">
+                            <span class="label">Langages</span>
+                            <span class="caret">▶</span>
+                        </div>
+                        <div class="media-details" id="languages">
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/HTML.png"><span>HTML</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/CSS.png"><span>CSS</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/js.png"><span>Javascript</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/java.png"><span>Java</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/C.png"><span>C</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/C++.png"><span>C++</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/python.png"><span>Python</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/lua.png"><span>Lua</span></div>
+                        </div>
+
+                        <div class="media-entry" data-target="web">
+                            <img class="media-icon" src="img/icons/folder_close.png">
+                            <span class="label">Développement Web</span>
+                            <span class="caret">▶</span>
+                        </div>
+                        <div class="media-details" id="web">
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/web/nodejs.png"><span>Node.js</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/web/apache.png"><span>Apache Tomcat</span></div>
+                        </div>
+
+                        <div class="media-entry" data-target="db">
+                            <img class="media-icon" src="img/icons/folder_close.png">
+                            <span class="label">Bases de données</span>
+                            <span class="caret">▶</span>
+                        </div>
+                        <div class="media-details" id="db">
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/postgreSQL.png"><span>PostgreSQL</span></div>
+                        </div>
+
+                        <div class="media-entry" data-target="ci">
+                            <img class="media-icon" src="img/icons/folder_close.png">
+                            <span class="label">Systèmes d'exploitation</span>
+                            <span class="caret">▶</span>
+                        </div>
+                        <div class="media-details" id="ci">
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/windows.png"><span>Windows</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/android.png"><span>Android</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/linux.png"><span>Linux</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/debian.png"><span>Debian</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/ubuntu.png"><span>Ubuntu</span></div>
+                        </div>
+
+                        <div class="media-entry" data-target="design">
+                            <img class="media-icon" src="img/icons/folder_close.png">
+                            <span class="label">Design</span>
+                            <span class="caret">▶</span>
+                        </div>
+                        <div class="media-details" id="design">
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/design/photoshop.png"><span>Adobe Photoshop</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/design/premiere.png"><span>Adobe Premiere</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/design/xd.png"><span>Adobe XD</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/design/canva.png"><span>Canva</span></div>
+                        </div>
+
+                        <div class="media-entry" data-target="version">
+                            <img class="media-icon" src="img/icons/folder_close.png">
+                            <span class="label">Contrôle de version</span>
+                            <span class="caret">▶</span>
+                        </div>
+                        <div class="media-details" id="version">
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/controleversion/git.png"><span>Git</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/controleversion/github.png"><span>GitHub</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/controleversion/gitlab.png"><span>GitLab</span></div>
+                        </div>
+
+                        <div class="media-entry" data-target="autre">
+                            <img class="media-icon" src="img/icons/folder_close.png">
+                            <span class="label">Autre</span>
+                            <span class="caret">▶</span>
+                        </div>
+                        <div class="media-details" id="autre">
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/autre/markdown.png"><span>Markdown</span></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- DÉCOUVREZ MES PROJETS WINDOW -->
+            <div class="winbox" id="discover-window">
+                <div class="win-header">
+                    <div class="title">
+                        <img src="img/icons/project.png" width="22"> DÉCOUVREZ MES PROJETS
+                    </div>
+                    <div class="win-buttons linux-buttons">
+                        <button class="win-btn-lx minimize">━</button>
+                        <button class="win-btn-lx maximize">▢</button>
+                        <button class="win-btn-lx close">✕</button>
+                    </div>
+                </div>
+                <div class="win-content discover-content">
+                    <div class="project-ad" data-project="mizutwitter">
+                        <img src="img/projects/mizu.png" alt="Mizu Twitter">
+                        <h3>Mizu Twitter</h3>
+                    </div>
+                    <div class="project-ad" data-project="iuterrain">
+                        <img src="img/projects/iuterrain.png" alt="IUT'ERRAIN">
+                        <h3>IUT'ERRAIN</h3>
+                    </div>
+                    <div class="project-ad" data-project="googlegreen">
+                        <img src="img/projects/googlegreen.png" alt="GOOGLEGREEN">
+                        <h3>GOOGLE GREEN</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CENTRES D'INTERET WINDOW -->
+            <div class="winbox" id="centres-window">
+                <div class="win-header">
+                    <div class="title">
+                        <img src="img/icons/die.png" width="22"> CENTRES D'INTERET
+                    </div>
+                    <div class="win-buttons linux-buttons">
+                        <button class="win-btn-lx minimize">━</button>
+                        <button class="win-btn-lx maximize">▢</button>
+                        <button class="win-btn-lx close">✕</button>
+                    </div>
+                </div>
+                <div class="win-content">
+                    <div class="app-grid">
+                        <div class="app"
+                            data-title="Voyage"
+                            data-image="img/interests/travel.png"
+                            data-description="J’aime voyager afin de découvrir de nouveaux pays, cultures et modes de vie. Le voyage me permet de sortir de ma zone de confort et de m’adapter à des environnements variés."
+                            data-like="Voyager développe ma curiosité, mon sens de l’adaptation et mon ouverture d’esprit. Chaque expérience m’apporte une nouvelle perspective et m’aide à mieux comprendre les autres ainsi que moi-même.">
+                            <img src="img/interests/travel.png" alt="voyage">
+                            <span>Voyage</span>
+                        </div>
+
+                        <div class="app"
+                            data-title="Jeux vidéo"
+                            data-image="img/interests/videogames.png"
+                            data-description="J’aime jouer de temps en temps à des jeux qui sollicitent la réflexion, la stratégie, la logique, le travail d’équipe et la créativité."
+                            data-like="Les jeux vidéo m’ont introduit dans le domaine de la création. En cherchant à modifier des jeux (mods) ou à créer des serveurs, j’ai découvert le développement informatique, ce qui a éveillé mon intérêt pour la programmation et la conception de systèmes.">
+                            <img src="img/interests/videogames.png" alt="Jeux vidéo">
+                            <span>Jeux vidéo</span>
+                        </div>
+
+                        <div class="app"
+                            data-title="Salle de sport"
+                            data-image="img/interests/gym.png"
+                            data-description="Je pratique la salle de sport pour améliorer ma condition physique, ma discipline personnelle et mon bien-être général. C’est une activité qui demande régularité et persévérance."
+                            data-like="Le sport m’aide à me dépasser, à gérer le stress et à maintenir un bon équilibre entre le mental et le physique. Il m’apprend également la rigueur et la constance dans l’effort.">
+                            <img src="img/interests/gym.png" alt="salle de sport">
+                            <span>Salle de sport</span>
+                        </div>
+
+                        <div class="app"
+                            data-title="Montage photo/vidéo"
+                            data-image="img/interests/editing.png"
+                            data-description="Je réalise des montages photo et vidéo afin de rendre le contenu plus attrayant et de mettre en valeur des moments importants."
+                            data-like="Le montage est essentiel pour valoriser et populariser des projets personnels. Il me permet de présenter mes idées de manière claire et engageante, tout en développant ma créativité et mon sens de la communication visuelle.">
+                            <img src="img/interests/editing.png" alt="montage photo/vidéo">
+                            <span>Montage Photo/Vidéo</span>
+                        </div>
+
+                        <div class="app"
+                            data-title="Visual Novels"
+                            data-image="img/interests/visualnovel.png"
+                            data-description="Je m’intéresse aux visual novels/romans vidéoludiques pour leur forte dimension narrative et émotionnelle. Ces œuvres abordent souvent des thèmes profonds et des leçons de vie à travers des personnages et des situations marquantes."
+                            data-like="Les visual novels m’apportent une réflexion sur des sujets humains et sociaux tout en me faisant découvrir des aspects de la culture japonaise. Ils nourrissent mon attrait pour la narration, la psychologie des personnages et la manière dont une histoire peut transmettre des valeurs et des messages forts.">
+                            <img src="img/interests/visualnovel.png" alt="visual novel">
+                            <span>Visual Novels</span>
+                        </div>
+
+                        <div class="app"
+                            data-title="Histoire"
+                            data-image="img/interests/history.png"
+                            data-description="Je m’intéresse à l’histoire pour comprendre l’évolution des sociétés, des cultures et des événements qui ont façonné le monde actuel."
+                            data-like="L’histoire me permet de développer mon esprit critique et ma capacité d’analyse. Elle m’aide à mieux comprendre le présent en apprenant du passé.">
+                            <img src="img/interests/history.png" alt="histoire">
+                            <span>Histoire</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- EXPLORATEUR DE PROJETS WINDOW -->
+        <div class="winbox" id="projets-window">
+            <div class="win-header">
+                <div class="title">
+                    <img src="img/icons/project.png" width="22"> EXPLORATEUR DE PROJETS
+                </div>
+                <div class="win-buttons linux-buttons">
+                    <button class="win-btn-lx minimize">━</button>
+                    <button class="win-btn-lx maximize">▢</button>
+                    <button class="win-btn-lx close">✕</button>
+                </div>
+            </div>
+            <div class="win-content">
+
+                <div class="project project-featured" data-project="mizutwitter">
+                    <div class="project-header">
+                        <img class="project-icon" src="img/icons/zip.png">
+                        <h3 class="project-title">Mizu Twitter</h3>
+                        <span class="status-badge status-perso">PROJET PERSONNEL</span>
+                    </div>
+                    <div class="project-date">2025-2026</div>
+                    <img class="project-banner" src="img/projects/mizu.png" alt="Mizu Twitter">
+
+                    <div class="project-desc">
+                        Extension de navigateur pour Twitter qui ajoute des thèmes totalement personnalisables,
+                        masque les éléments superflus et supprime les contenus politiques de votre fil d’actualité.
+                    </div>
+
+                    <div class="project-tech">
+                        <span class="tech-badge">HTML/CSS</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Extension Navigateur</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/dawidbanas/mizu-twitter" target="_blank" class="project-btn">Voir le projet →</a>
+                    </div>
+                </div>
+
+                <div class="project project-featured" data-project="iuterrain">
+                    <div class="project-header">
+                        <img class="project-icon" src="img/icons/zip.png">
+                        <h3 class="project-title">IUT'ERRAIN</h3>
+                        <span class="status-badge status-school">PROJET SCOLAIRE</span>
+                    </div>
+                    <div class="project-date">2025</div>
+                    <img class="project-banner" src="img/projects/iuterrain.png" alt="IUT'ERRAIN">
+
+                    <div class="project-desc">
+                        Jeu de labyrinthe développé en Java où le joueur doit trouver son chemin de l'entrée jusqu'à la sortie.
+                            Inclut un mode progression et un mode libre laissant le joueur choisir la génération de son labyrinthe
+                            en utilisant des algorithmes de générations et des options différentes.
+                    </div>
+
+                    <div class="project-tech">
+                        <span class="tech-badge">Java</span>
+                        <span class="tech-badge">JavaFX</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/dawidbanas/iuterrain" target="_blank" class="project-btn">Voir le projet →</a>
+                    </div>
+                </div>
+
+                <div class="project project-featured" data-project="googlegreen">
+                    <div class="project-header">
+                        <img class="project-icon" src="img/icons/zip.png">
+                        <h3 class="project-title">GOOGLE GREEN</h3>
+                        <span class="status-badge status-school">PROJET SCOLAIRE</span>
+                    </div>
+                    <div class="project-date">2024</div>
+                    <img class="project-banner" src="img/projects/googlegreen.png" alt="GOOGLEGREEN">
+
+                    <div class="project-desc">
+                        Conception d'un site web statique autour de la mobilité durable en entreprise.
+                        Le projet visait à proposer des solutions facilitant les trajets domicile-travail
+                        afin de réduire l'empreinte carbone d'une entreprise,
+                        avec une interface inspirée de son identité visuelle (ici Google).
+                    </div>
+
+                    <div class="project-tech">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/xylin-sky/Google-Green-SAE" target="_blank" class="project-btn">Voir le projet →</a>
+                    </div>
+                </div>
+
+                <div class="project project-featured" data-project="minecraftregiments">
+                    <div class="project-header">
+                        <img class="project-icon" src="img/icons/zip.png">
+                        <h3 class="project-title">MINECRAFT REGIMENTS</h3>
+                        <span class="status-badge status-perso">PROJET PERSONNEL</span>
+                    </div>
+                    <div class="project-date">2023-2024</div>
+                    <img class="project-banner" src="img/projects/minecraftregiments.png" alt="MINECRAFT REGIMENTS">
+
+                    <div class="project-desc">
+                        Minecraft Regiments était un serveur moddé francophone dédié au combat et à la simulation militaire.
+                        Il proposait des missions immersives favorisant stratégie, coopération et plaisir de jeu.
+                        Le serveur a rassemblé 150 membres et a généré des milliers de vues sur les réseaux sociaux.
+                    </div>
+
+                    <div class="project-tech">
+                        <span class="tech-badge">Java</span>
+                        <span class="tech-badge">SSH</span>
+                        <span class="tech-badge">Plugins</span>
+                        <span class="tech-badge">Modding</span>
+                        <span class="tech-badge">Optimisation</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="" target="_blank" class="project-btn">Voir le projet →</a>
+                    </div>
+                </div>
+
+                <div class="project project-featured" data-project="codewarfare">
+                    <div class="project-header">
+                        <img class="project-icon" src="img/icons/zip.png">
+                        <h3 class="project-title">CODE WARFARE</h3>
+                        <span class="status-badge status-perso">PROJET PERSONNEL</span>
+                    </div>
+                    <div class="project-date">2021</div>
+                    <img class="project-banner" src="img/projects/codewarfare.png" alt="CODE WARFARE">
+
+                    <div class="project-desc">
+                        Tower defense développé entièrement en C/C++ from scratch avec la librairie SFML, sans moteur de jeu. 
+                        L’ensemble des mécaniques de jeu, de la gestion des tours à l’IA des ennemis, 
+                        ainsi que tous les éléments graphiques et logiques, ont été conçus et implémentés manuellement.
+                    </div>
+
+                    <div class="project-tech">
+                        <span class="tech-badge">C</span>
+                        <span class="tech-badge">C++</span>
+                        <span class="tech-badge">SFML</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="" target="_blank" class="project-btn">Voir le projet →</a>
+                    </div>
+                </div>
+
+                <div class="project project-featured" data-project="omicronbot">
+                    <div class="project-header">
+                        <img class="project-icon" src="img/icons/zip.png">
+                        <h3 class="project-title">OMICRONBOT</h3>
+                        <span class="status-badge status-perso">PROJET PERSONNEL</span>
+                    </div>
+                    <div class="project-date">2020</div>
+                    <img class="project-banner" src="img/projects/omicronbot.png" alt="OMICRONBOT">
+
+                    <div class="project-desc">
+                        OmicronBot était mon premier bot Discord. Il permettait aux utilisateurs de jouer à plusieurs
+                        à des mini-jeux interactifs sur Discord, comme par exemple le Puissance 4, pierre-feuille-ciseaux, 
+                        des jeux de logique, et bien d’autres. Il permettait également d’afficher des statistiques mondiales utiles.
+                    </div>
+
+                    <div class="project-tech">
+                        <span class="tech-badge">Node JS</span>
+                        <span class="tech-badge">Discord API</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="" target="_blank" class="project-btn">Voir le projet →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="popup-overlay" class="popup-overlay">
+        <div class="popup-window">
+            <div class="popup-header">
+                <span id="popup-title">Titre</span>
+                <button id="popup-close">✕</button>
+            </div>
+
+            <div class="popup-image-container">
+                <img id="popup-image" src="" alt="Centre d'intérêt">
+            </div>
+
+            <div class="popup-content">
+                <p id="popup-description"></p>
+
+                <p class="popup-like-title">Pourquoi j'aime cela</p>
+                <p id="popup-like"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/media.js"></script>
+    <script src="script/showcase.js"></script>
+    <script src="script/terminal.js"></script>
+
+</body>
+</html>
