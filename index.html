@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Dawid Banas</title>
-    <link rel="stylesheet" href="style/fonts.css">
+    <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="style/cyberpunk.css" id="theme-link">
 </head>
 <body>
 
     <!-- TOPBAR -->
-    <div class="top-bar">
+    <header class="top-bar">
         <div class="top-title">Dawid Banas</div>
-        <div class="top-buttons">
-            <select id="theme-selector">
+        <nav class="top-buttons" aria-label="Navigation principale">
+            <select id="theme-selector" aria-label="Choisir le thème">
                 <option value="style/cyberpunk.css">Cyberpunk</option>
-                <option value="style/main.css">Default</option>
+                <option value="style/amber.css">Amber</option>
+                <option value="style/matrix.css">Matrix</option>
             </select>
 
             <button data-target="apropos-window">A PROPOS</button>
@@ -23,8 +24,8 @@
             <button data-target="skills-window">COMPETENCES</button>
             <button data-target="projets-window">PROJETS</button>
             <button data-target="centres-window">CENTRES D'INTERET</button>
-        </div>
-    </div>
+        </nav>
+    </header>
 
     <!-- TITLE -->
     <div class="title-container">
@@ -34,73 +35,109 @@
         </div>
     </div>
 
-    <div class="grid-layout">
+    <main class="grid-layout">
 
         <!-- LEFT COLUMN -->
         <div class="left-col">
 
             <!-- A PROPOS WINDOW -->
-            <div class="winbox" id="apropos-window">
-                <div class="win-header">
+            <section class="winbox" id="apropos-window">
+                <header class="win-header">
                     <div class="title">
-                        <img src="img/window-icons/settings.png" width="22"> README.md
+                        <img src="img/window-icons/settings.png" alt="">README.md
                     </div>
                     <div class="win-buttons linux-buttons">
                         <button class="win-btn-lx minimize">━</button>
                         <button class="win-btn-lx maximize">▢</button>
                         <button class="win-btn-lx close">✕</button>
                     </div>
-                </div>
+                </header>
                 <div class="win-content readme-content">
                     <h1 class="readme-title">Bienvenue sur mon Portfolio</h1>
                     <p>
-                        Passionné par le <b>développement web</b>, l’<b>ingénierie logicielle</b> et la <b>conception de jeux vidéo</b>, j’aime apprendre de nouvelles technologies et créer des projets concrets.<br>
-                        Ce portfolio présente mon parcours, mes compétences, mes projets et mes centres d’intérêt.
+                        Étudiant en 2ème année de <strong>BUT Informatique</strong> à l’Université de Lille, je suis passionné par le <strong>développement web</strong>, l’<strong>ingénierie logicielle</strong> et la <strong>conception de jeux vidéo</strong>. J’aime apprendre de nouvelles technologies et les mettre en pratique à travers des projets concrets.
                     </p>
-                    <details>
-                        <summary>Informations de contact</summary>
-                        <ul>
-                            <li><strong>Email</strong> : dawidbanaspro@gmail.com</li>
-                            <li><strong>GitHub</strong> : <a href="https://github.com/Dawid-rgb" target="_blank">lien</a></li>
-                            <li><strong>LinkedIn</strong> : <a href="https://www.linkedin.com/in/dawid-banas-a8849438a/" target="_blank">lien</a></li>
-                        </ul>
-                    </details>
+                    <p>
+                        À l’issue de mon BUT, j’envisage de poursuivre en <strong>master informatique</strong> afin d’approfondir mes compétences et de me spécialiser davantage dans ces domaines.
+                    </p>
+                    <div class="contact-links">
+                        <a class="contact-btn" href="mailto:dawidbanaspro@gmail.com" title="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <polyline points="2,4 12,13 22,4"/>
+                            </svg>
+                            <span>Email</span>
+                        </a>
+                        <a class="contact-btn" href="https://github.com/Nyuke235" target="_blank" title="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+
+                    </div>
                 </div>
-            </div>
+            </section>
 
             <!-- TIMELINE EXPERIENCE/PARCOURS-->
-            <div class="winbox" id="experience-window">
-                <div class="win-header">
+            <section class="winbox" id="experience-window">
+                <header class="win-header">
                     <div class="title">
-                        <img src="img/window-icons/parcours.png" width="22"> EXPERIENCE ET PARCOURS
+                        <img src="img/window-icons/parcours.png" alt="">EXPERIENCE ET PARCOURS
                     </div>
                     <div class="win-buttons linux-buttons">
                         <button class="win-btn-lx minimize">━</button>
                         <button class="win-btn-lx maximize">▢</button>
                         <button class="win-btn-lx close">✕</button>
                     </div>
-                </div>
+                </header>
                 <div class="win-content">
 
                     <div class="timeline">
 
+                        <div class="timeline-item work">
+                            <div class="timeline-card">
+                                <div class="timeline-date">Avril - juin 2026</div>
+                                <div class="timeline-title">Stage Erasmus à Bruxelles</div>
+                                <div class="timeline-location">
+                                    <img src="img/icons/localisation.png" alt=""> Université libre de Bruxelles
+                                </div>
+                                <div class="timeline-desc">
+                                    Développement d'une API JavaScript (MEOS.js) pour Mobility Engine, Open Source (MEOS), 
+                                    la bibliothèque C centrale de MobilityDB qui gère les données temporelles et spatio-temporelles.
+                                </div>
+                                <div class="timeline-tech">
+                                    <span class="tech-badge">C</span>
+                                    <span class="tech-badge">Javascript</span>
+                                    <span class="tech-badge">Typescript</span>
+                                    <span class="tech-badge">Node.js</span>
+                                    <span class="tech-badge">Docker</span>
+                                    <span class="tech-badge">Git</span>
+                                    <span class="tech-badge">GitHub Actions</span>
+                                </div>
+                                <span class="timeline-tag">Stage</span>
+                            </div>
+                        </div>
+
                         <div class="timeline-item education">
                             <div class="timeline-card">
-                                <div class="timeline-date">2024 — Aujourd’hui</div>
+                                <div class="timeline-date">2024 - Aujourd'hui</div>
                                 <div class="timeline-title">BUT Informatique</div>
                                 <div class="timeline-location">
-                                    <img src="img/icons/localisation.png"> Université de Lille
+                                    <img src="img/icons/localisation.png" alt=""> Université de Lille
                                 </div>
                                 <div class="timeline-desc">
                                     Formation universitaire axée sur le développement logiciel, les systèmes informatiques,
-                                    les bases de données et l’utilisation d’environnements Linux.
+                                    les bases de données et l'utilisation d'environnements Linux.
                                 </div>
                                 <div class="timeline-tech">
+                                    <span class="tech-badge">Bash</span>
                                     <span class="tech-badge">Java</span>
                                     <span class="tech-badge">C</span>
                                     <span class="tech-badge">SQL</span>
                                     <span class="tech-badge">HTML/CSS</span>
-                                    <span class="tech-badge">Linux Debian</span>
+                                    <span class="tech-badge">Javascript</span>
+                                    <span class="tech-badge">Debian</span>
                                 </div>
                                 <span class="timeline-tag">Études</span>
                             </div>
@@ -111,10 +148,10 @@
                                 <div class="timeline-date">Été 2025</div>
                                 <div class="timeline-title">Développement Web</div>
                                 <div class="timeline-location">
-                                    <img src="img/icons/localisation.png"> Société M.E.I
+                                    <img src="img/icons/localisation.png" alt=""> Société M.E.I
                                 </div>
                                 <div class="timeline-desc">
-                                    Développement d’un site web pour l’entreprise M.E.I ainsi qu’une assistance
+                                    Développement d'un site web pour l'entreprise M.E.I ainsi qu'une assistance
                                     administrative incluant la gestion de documents et de tableaux.
                                 </div>
                                 <div class="timeline-tech">
@@ -123,20 +160,20 @@
                                     <span class="tech-badge">Excel</span>
                                     <span class="tech-badge">Word</span>
                                 </div>
-                                <span class="timeline-tag">Job d’été</span>
+                                <span class="timeline-tag">Job d'été</span>
                             </div>
                         </div>
 
                         <div class="timeline-item work">
                             <div class="timeline-card">
                                 <div class="timeline-date">Été 2024</div>
-                                <div class="timeline-title">Stage – SNCF Réseau</div>
+                                <div class="timeline-title">Stage - SNCF Réseau</div>
                                 <div class="timeline-location">
-                                    <img src="img/icons/localisation.png"> SNCF Réseau – Lille
+                                    <img src="img/icons/localisation.png" alt=""> SNCF Réseau - Lille
                                 </div>
                                 <div class="timeline-desc">
-                                    Contribution à la rédaction d’un dossier technique et participation
-                                    à la documentation du pilotage logiciel de l’entreprise.
+                                    Contribution à la rédaction d'un dossier technique et participation
+                                    à la documentation du pilotage logiciel de l'entreprise.
                                 </div>
                                 <div class="timeline-tech">
                                     <span class="tech-badge">Word</span>
@@ -149,9 +186,9 @@
                         <div class="timeline-item education">
                             <div class="timeline-card">
                                 <div class="timeline-date">2023 — 2024</div>
-                                <div class="timeline-title">École d’ingénieur IG2I</div>
+                                <div class="timeline-title">École d'ingénieur IG2I</div>
                                 <div class="timeline-location">
-                                    <img src="img/icons/localisation.png"> Institut de Génie Informatique et Industriel (IG2I)
+                                    <img src="img/icons/localisation.png" alt=""> Institut de Génie Informatique et Industriel (IG2I)
                                 </div>
                                 <div class="timeline-desc">
                                     Formation pluridisciplinaire en informatique et ingénierie,
@@ -174,139 +211,178 @@
                     </div>
 
                 </div>
-            </div>
+            </section>
 
         </div>
 
         <!-- RIGHT COLUMN -->
         <div class="right-col">
 
-            <div class="winbox" id="terminal-window">
-                <div class="win-header">
+            <section class="winbox" id="terminal-window">
+                <header class="win-header">
                     <div class="title">
-                        <img src="img/window-icons/terminal.png" width="22"> TERMINAL
+                        <img src="img/window-icons/terminal.png" alt="">TERMINAL
                     </div>
                     <div class="win-buttons linux-buttons">
                         <button class="win-btn-lx minimize">━</button>
                         <button class="win-btn-lx maximize">▢</button>
                         <button class="win-btn-lx close">✕</button>
                     </div>
-                </div>
+                </header>
                 <div class="win-content terminal-content" id="terminal"></div>
-            </div>
+            </section>
 
             <!-- COMPÉTENCES WINDOW -->
-            <div class="winbox" id="skills-window">
-                <div class="win-header">
+            <section class="winbox" id="skills-window">
+                <header class="win-header">
                     <div class="title">
-                        <img src="img/icons/skill.png" width="22"> COMPÉTENCES
+                        <img src="img/icons/skill.png" alt="">COMPÉTENCES
                     </div>
                     <div class="win-buttons linux-buttons">
                         <button class="win-btn-lx minimize">━</button>
                         <button class="win-btn-lx maximize">▢</button>
                         <button class="win-btn-lx close">✕</button>
                     </div>
-                </div>
+                </header>
 
                 <div class="win-content">
                     <div class="media-list">
 
                         <div class="media-entry" data-target="languages">
-                            <img class="media-icon" src="img/icons/folder_close.png">
+                            <img class="media-icon" src="img/icons/folder_close.png" alt="">
                             <span class="label">Langages</span>
                             <span class="caret">▶</span>
                         </div>
                         <div class="media-details" id="languages">
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/HTML.png"><span>HTML</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/CSS.png"><span>CSS</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/js.png"><span>Javascript</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/java.png"><span>Java</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/C.png"><span>C</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/C++.png"><span>C++</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/python.png"><span>Python</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/lua.png"><span>Lua</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/langages/HTML.png" alt=""><span>HTML</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/langages/CSS.png" alt=""><span>CSS</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/langages/js.png" alt=""><span>Javascript</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/langages/ts.png" alt=""><span>Typescript</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/langages/java.png" alt=""><span>Java</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/langages/C.png" alt=""><span>C</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/langages/C++.png" alt=""><span>C++</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/langages/python.png" alt=""><span>Python</span></div>
                         </div>
 
                         <div class="media-entry" data-target="web">
-                            <img class="media-icon" src="img/icons/folder_close.png">
+                            <img class="media-icon" src="img/icons/folder_close.png" alt="">
                             <span class="label">Développement Web</span>
                             <span class="caret">▶</span>
                         </div>
                         <div class="media-details" id="web">
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/web/nodejs.png"><span>Node.js</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/web/apache.png"><span>Apache Tomcat</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/web/vite.png" alt=""><span>Vite</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/web/nodejs.png" alt=""><span>Node.js</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/web/express.png" alt=""><span>Express.js</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/web/apache.png" alt=""><span>Apache Tomcat</span></div>
                         </div>
 
                         <div class="media-entry" data-target="db">
-                            <img class="media-icon" src="img/icons/folder_close.png">
+                            <img class="media-icon" src="img/icons/folder_close.png" alt="">
                             <span class="label">Bases de données</span>
                             <span class="caret">▶</span>
                         </div>
                         <div class="media-details" id="db">
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/postgreSQL.png"><span>PostgreSQL</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/bdd/postgreSQL.png" alt=""><span>PostgreSQL</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/bdd/sqlite.png" alt=""><span>SQLite</span></div>
                         </div>
 
-                        <div class="media-entry" data-target="ci">
-                            <img class="media-icon" src="img/icons/folder_close.png">
+                        <div class="media-entry" data-target="gamedev">
+                            <img class="media-icon" src="img/icons/folder_close.png" alt="">
+                            <span class="label">Développement jeu vidéo</span>
+                            <span class="caret">▶</span>
+                        </div>
+                        <div class="media-details" id="gamedev">
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/gamedev/godot.png" alt=""><span>Godot</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/gamedev/libgdx.png" alt=""><span>LibGDX</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/gamedev/sfml.png" alt=""><span>SFML</span></div>
+                        </div>
+
+                        <div class="media-entry" data-target="cicd">
+                            <img class="media-icon" src="img/icons/folder_close.png" alt="">
+                            <span class="label">CI/CD</span>
+                            <span class="caret">▶</span>
+                        </div>
+                        <div class="media-details" id="cicd">
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/cicd/githubactions.png" alt=""><span>GitHub Actions</span></div>
+                             <div class="media-row"><img class="media-skill-icon" src="img/skills/cicd/gitlabci.png" alt=""><span>GitLab CI</span></div>
+                        </div>
+
+                        <div class="media-entry" data-target="tools">
+                            <img class="media-icon" src="img/icons/folder_close.png" alt="">
+                            <span class="label">Outils</span>
+                            <span class="caret">▶</span>
+                        </div>
+                        <div class="media-details" id="tools">
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/tools/githubpages.png" alt=""><span>GitHub Pages</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/tools/cmake.png" alt=""><span>CMake</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/tools/npm.png" alt=""><span>NPM</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/tools/docker.png" alt=""><span>Docker</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/tools/maven.png" alt=""><span>Maven</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/tools/tauri.png" alt=""><span>Tauri</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/tools/prettier.png" alt=""><span>Prettier</span></div>
+                        </div>
+
+                        <div class="media-entry" data-target="sys">
+                            <img class="media-icon" src="img/icons/folder_close.png" alt="">
                             <span class="label">Systèmes d'exploitation</span>
                             <span class="caret">▶</span>
                         </div>
-                        <div class="media-details" id="ci">
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/windows.png"><span>Windows</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/android.png"><span>Android</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/linux.png"><span>Linux</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/debian.png"><span>Debian</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/ubuntu.png"><span>Ubuntu</span></div>
+                        <div class="media-details" id="sys">
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/windows.png" alt=""><span>Windows</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/linux.png" alt=""><span>Linux</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/arch.png" alt=""><span>Arch</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/debian.png" alt=""><span>Debian</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/systemes/ubuntu.png" alt=""><span>Ubuntu</span></div>
                         </div>
 
                         <div class="media-entry" data-target="design">
-                            <img class="media-icon" src="img/icons/folder_close.png">
+                            <img class="media-icon" src="img/icons/folder_close.png" alt="">
                             <span class="label">Design</span>
                             <span class="caret">▶</span>
                         </div>
                         <div class="media-details" id="design">
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/design/photoshop.png"><span>Adobe Photoshop</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/design/premiere.png"><span>Adobe Premiere</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/design/xd.png"><span>Adobe XD</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/design/canva.png"><span>Canva</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/design/photoshop.png" alt=""><span>Adobe Photoshop</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/design/premiere.png" alt=""><span>Adobe Premiere</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/design/xd.png" alt=""><span>Adobe XD</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/design/canva.png" alt=""><span>Canva</span></div>
                         </div>
 
                         <div class="media-entry" data-target="version">
-                            <img class="media-icon" src="img/icons/folder_close.png">
+                            <img class="media-icon" src="img/icons/folder_close.png" alt="">
                             <span class="label">Contrôle de version</span>
                             <span class="caret">▶</span>
                         </div>
                         <div class="media-details" id="version">
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/controleversion/git.png"><span>Git</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/controleversion/github.png"><span>GitHub</span></div>
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/controleversion/gitlab.png"><span>GitLab</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/controleversion/git.png" alt=""><span>Git</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/controleversion/github.png" alt=""><span>GitHub</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/controleversion/gitlab.png" alt=""><span>GitLab</span></div>
                         </div>
 
                         <div class="media-entry" data-target="autre">
-                            <img class="media-icon" src="img/icons/folder_close.png">
+                            <img class="media-icon" src="img/icons/folder_close.png" alt="">
                             <span class="label">Autre</span>
                             <span class="caret">▶</span>
                         </div>
                         <div class="media-details" id="autre">
-                            <div class="media-row"><img class="media-skill-icon" src="img/skills/autre/markdown.png"><span>Markdown</span></div>
+                            <div class="media-row"><img class="media-skill-icon" src="img/skills/autre/markdown.png" alt=""><span>Markdown</span></div>
                         </div>
 
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- DÉCOUVREZ MES PROJETS WINDOW -->
-            <div class="winbox" id="discover-window">
-                <div class="win-header">
+            <section class="winbox" id="discover-window">
+                <header class="win-header">
                     <div class="title">
-                        <img src="img/icons/project.png" width="22"> DÉCOUVREZ MES PROJETS
+                        <img src="img/icons/project.png" alt="">DÉCOUVREZ MES PROJETS
                     </div>
                     <div class="win-buttons linux-buttons">
                         <button class="win-btn-lx minimize">━</button>
                         <button class="win-btn-lx maximize">▢</button>
                         <button class="win-btn-lx close">✕</button>
                     </div>
-                </div>
+                </header>
                 <div class="win-content discover-content">
                     <div class="project-ad" data-project="mizutwitter">
                         <img src="img/projects/mizu.png" alt="Mizu Twitter">
@@ -321,20 +397,20 @@
                         <h3>GOOGLE GREEN</h3>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- CENTRES D'INTERET WINDOW -->
-            <div class="winbox" id="centres-window">
-                <div class="win-header">
+            <section class="winbox" id="centres-window">
+                <header class="win-header">
                     <div class="title">
-                        <img src="img/icons/die.png" width="22"> CENTRES D'INTERET
+                        <img src="img/icons/die.png" alt="">CENTRES D'INTERET
                     </div>
                     <div class="win-buttons linux-buttons">
                         <button class="win-btn-lx minimize">━</button>
                         <button class="win-btn-lx maximize">▢</button>
                         <button class="win-btn-lx close">✕</button>
                     </div>
-                </div>
+                </header>
                 <div class="win-content">
                     <div class="app-grid">
                         <div class="app"
@@ -392,36 +468,89 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
         </div>
 
-        <!-- EXPLORATEUR DE PROJETS WINDOW -->
-        <div class="winbox" id="projets-window">
-            <div class="win-header">
+    </main>
+
+    <!-- EXPLORATEUR DE PROJETS — full width, outside the two-column grid -->
+    <div class="projets-wrapper">
+        <section class="winbox" id="projets-window">
+            <header class="win-header">
                 <div class="title">
-                    <img src="img/icons/project.png" width="22"> EXPLORATEUR DE PROJETS
+                    <img src="img/icons/project.png" alt="">EXPLORATEUR DE PROJETS
                 </div>
                 <div class="win-buttons linux-buttons">
                     <button class="win-btn-lx minimize">━</button>
                     <button class="win-btn-lx maximize">▢</button>
                     <button class="win-btn-lx close">✕</button>
                 </div>
-            </div>
+            </header>
             <div class="win-content">
 
-                <div class="project project-featured" data-project="mizutwitter">
+                <article class="project project-featured" data-project="talesofdanmaku">
                     <div class="project-header">
-                        <img class="project-icon" src="img/icons/zip.png">
+                        <img class="project-icon" src="img/icons/zip.png" alt="">
+                        <h3 class="project-title">Touhou ~ Tales of Danmaku</h3>
+                        <span class="status-badge status-perso">PROJET PERSONNEL</span>
+                    </div>
+                    <div class="project-date">2026</div>
+                    <img class="project-banner" src="img/projects/talesofdanmaku.png" alt="Tales of Danmaku" loading="lazy">
+
+                    <div class="project-context">
+                        <span class="ctx-cadre">SAÉ universitaire</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-team">Trinôme, puis repris en solo</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-role">Mon rôle : Développeur principal</span>
+                    </div>
+
+                    <div class="project-desc">
+                        Fan-game <strong>danmaku</strong> basé sur l'univers <strong>Touhou</strong>, développé de zéro en <strong>TypeScript</strong>.
+                        <strong>Shoot 'em up 2D</strong> solo et multijoueur jouable sur navigateur ou en application de bureau,
+                        où le joueur affronte des vagues d'ennemis et de boss en mode <strong>bullet hell</strong>.
+                    </div>
+
+                    <div class="project-tech">
+                        <span class="tech-badge">HTML/CSS</span>
+                        <span class="tech-badge">Typescript</span>
+                        <span class="tech-badge">Vite</span>
+                        <span class="tech-badge">Express.js</span>
+                        <span class="tech-badge">SQLite</span>
+                        <span class="tech-badge">Tauri</span>
+                    </div>
+
+                    <div class="project-terminal-section">
+                        <button class="pt-toggle">PLUS D'INFORMATIONS</button>
+                        <div class="project-terminal"></div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/Nyuke235/Touhou-Tales-of-Danmaku" target="_blank" class="project-btn">Voir le projet →</a>
+                    </div>
+                </article>
+
+                <article class="project project-featured" data-project="mizutwitter">
+                    <div class="project-header">
+                        <img class="project-icon" src="img/icons/zip.png" alt="">
                         <h3 class="project-title">Mizu Twitter</h3>
                         <span class="status-badge status-perso">PROJET PERSONNEL</span>
                     </div>
                     <div class="project-date">2025-2026</div>
-                    <img class="project-banner" src="img/projects/mizu.png" alt="Mizu Twitter">
+                    <img class="project-banner" src="img/projects/mizu.png" alt="Mizu Twitter" loading="lazy">
+
+                    <div class="project-context">
+                        <span class="ctx-cadre">Projet personnel</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-team">Individuel</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-role">Mon rôle : Développeur (conception & développement complet)</span>
+                    </div>
 
                     <div class="project-desc">
-                        Extension de navigateur pour Twitter qui ajoute des thèmes totalement personnalisables,
-                        masque les éléments superflus et supprime les contenus politiques de votre fil d’actualité.
+                        Extension de navigateur pour Twitter qui ajoute des <strong>thèmes totalement personnalisables</strong>,
+                        masque les éléments superflus et <strong>supprime les contenus politiques</strong> de votre fil d’actualité.
                     </div>
 
                     <div class="project-tech">
@@ -430,24 +559,36 @@
                         <span class="tech-badge">Extension Navigateur</span>
                     </div>
 
-                    <div class="project-actions">
-                        <a href="https://github.com/dawidbanas/mizu-twitter" target="_blank" class="project-btn">Voir le projet →</a>
+                    <div class="project-terminal-section">
+                        <button class="pt-toggle">PLUS D’INFORMATIONS</button>
+                        <div class="project-terminal"></div>
                     </div>
-                </div>
 
-                <div class="project project-featured" data-project="iuterrain">
+                    <div class="project-actions">
+                        <a href="https://github.com/Nyuke235/Mizu-Twitter" target="_blank" class="project-btn">Voir le projet →</a>
+                    </div>
+                </article>
+
+                <article class="project project-featured" data-project="iuterrain">
                     <div class="project-header">
-                        <img class="project-icon" src="img/icons/zip.png">
+                        <img class="project-icon" src="img/icons/zip.png" alt="">
                         <h3 class="project-title">IUT'ERRAIN</h3>
                         <span class="status-badge status-school">PROJET SCOLAIRE</span>
                     </div>
                     <div class="project-date">2025</div>
-                    <img class="project-banner" src="img/projects/iuterrain.png" alt="IUT'ERRAIN">
+                    <img class="project-banner" src="img/projects/iuterrain.png" alt="IUT'ERRAIN" loading="lazy">
+
+                    <div class="project-context">
+                        <span class="ctx-cadre">SAÉ universitaire</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-team">Trinôme</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-role">Mon rôle : Développeur (algorithmes de génération de labyrinthe)</span>
+                    </div>
 
                     <div class="project-desc">
-                        Jeu de labyrinthe développé en Java où le joueur doit trouver son chemin de l'entrée jusqu'à la sortie.
-                            Inclut un mode progression et un mode libre laissant le joueur choisir la génération de son labyrinthe
-                            en utilisant des algorithmes de générations et des options différentes.
+                        Jeu de labyrinthe en <strong>Java</strong> avec <strong>deux modes</strong> : une progression guidée et un <strong>mode libre</strong>
+                        où le joueur choisit son <strong>algorithme de génération</strong> parmi plusieurs options.
                     </div>
 
                     <div class="project-tech">
@@ -455,25 +596,37 @@
                         <span class="tech-badge">JavaFX</span>
                     </div>
 
-                    <div class="project-actions">
-                        <a href="https://github.com/dawidbanas/iuterrain" target="_blank" class="project-btn">Voir le projet →</a>
+                    <div class="project-terminal-section">
+                        <button class="pt-toggle">PLUS D'INFORMATIONS</button>
+                        <div class="project-terminal"></div>
                     </div>
-                </div>
 
-                <div class="project project-featured" data-project="googlegreen">
+                    <div class="project-actions">
+                        <a href="" target="_blank" class="project-btn">Voir le projet →</a>
+                    </div>
+                </article>
+
+                <article class="project project-featured" data-project="googlegreen">
                     <div class="project-header">
-                        <img class="project-icon" src="img/icons/zip.png">
+                        <img class="project-icon" src="img/icons/zip.png" alt="">
                         <h3 class="project-title">GOOGLE GREEN</h3>
                         <span class="status-badge status-school">PROJET SCOLAIRE</span>
                     </div>
                     <div class="project-date">2024</div>
-                    <img class="project-banner" src="img/projects/googlegreen.png" alt="GOOGLEGREEN">
+                    <img class="project-banner" src="img/projects/googlegreen.png" alt="GOOGLEGREEN" loading="lazy">
+
+                    <div class="project-context">
+                        <span class="ctx-cadre">SAÉ universitaire</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-team">Binôme</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-role">Mon rôle : Développeur & designer</span>
+                    </div>
 
                     <div class="project-desc">
-                        Conception d'un site web statique autour de la mobilité durable en entreprise.
-                        Le projet visait à proposer des solutions facilitant les trajets domicile-travail
-                        afin de réduire l'empreinte carbone d'une entreprise,
-                        avec une interface inspirée de son identité visuelle (ici Google).
+                        Site web statique sur la <strong>mobilité durable</strong> en entreprise, proposant des solutions
+                        pour réduire l'<strong>empreinte carbone</strong> des trajets domicile-travail,
+                        avec une interface inspirée de l'identité visuelle de <strong>Google</strong>.
                     </div>
 
                     <div class="project-tech">
@@ -481,24 +634,37 @@
                         <span class="tech-badge">CSS</span>
                     </div>
 
+                    <div class="project-terminal-section">
+                        <button class="pt-toggle">PLUS D'INFORMATIONS</button>
+                        <div class="project-terminal"></div>
+                    </div>
+
                     <div class="project-actions">
                         <a href="https://github.com/xylin-sky/Google-Green-SAE" target="_blank" class="project-btn">Voir le projet →</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="project project-featured" data-project="minecraftregiments">
+                <article class="project project-featured" data-project="minecraftregiments">
                     <div class="project-header">
-                        <img class="project-icon" src="img/icons/zip.png">
+                        <img class="project-icon" src="img/icons/zip.png" alt="">
                         <h3 class="project-title">MINECRAFT REGIMENTS</h3>
                         <span class="status-badge status-perso">PROJET PERSONNEL</span>
                     </div>
                     <div class="project-date">2023-2024</div>
-                    <img class="project-banner" src="img/projects/minecraftregiments.png" alt="MINECRAFT REGIMENTS">
+                    <img class="project-banner" src="img/projects/minecraftregiments.png" alt="MINECRAFT REGIMENTS" loading="lazy">
+
+                    <div class="project-context">
+                        <span class="ctx-cadre">Projet personnel</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-team">Individuel</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-role">Mon rôle : Fondateur, administrateur & développeur du serveur</span>
+                    </div>
 
                     <div class="project-desc">
-                        Minecraft Regiments était un serveur moddé francophone dédié au combat et à la simulation militaire.
-                        Il proposait des missions immersives favorisant stratégie, coopération et plaisir de jeu.
-                        Le serveur a rassemblé 150 membres et a généré des milliers de vues sur les réseaux sociaux.
+                        Serveur moddé francophone dédié au <strong>combat et à la simulation militaire</strong>,
+                        proposant des missions immersives favorisant stratégie et coopération.
+                        A rassemblé <strong>150 membres</strong> et généré <strong>des milliers de vues</strong> sur les réseaux sociaux.
                     </div>
 
                     <div class="project-tech">
@@ -509,24 +675,75 @@
                         <span class="tech-badge">Optimisation</span>
                     </div>
 
+                    <div class="project-terminal-section">
+                        <button class="pt-toggle">PLUS D'INFORMATIONS</button>
+                        <div class="project-terminal"></div>
+                    </div>
+
                     <div class="project-actions">
                         <a href="" target="_blank" class="project-btn">Voir le projet →</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="project project-featured" data-project="codewarfare">
+                <article class="project project-featured" data-project="poisonplant">
                     <div class="project-header">
-                        <img class="project-icon" src="img/icons/zip.png">
+                        <img class="project-icon" src="img/icons/zip.png" alt="">
+                        <h3 class="project-title">POISON PLANT</h3>
+                        <span class="status-badge status-perso">PROJET PERSONNEL</span>
+                    </div>
+                    <div class="project-date">2022</div>
+                    <img class="project-banner" src="img/projects/poisonplant.png" alt="POISON PLANT" loading="lazy">
+
+                    <div class="project-context">
+                        <span class="ctx-cadre">Projet personnel</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-team">Individuel</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-role">Mon rôle : Développeur & game designer</span>
+                    </div>
+
+                    <div class="project-desc">
+                        Jeu vidéo <strong>platformer de survie</strong> développé avec <strong>Godot</strong> où le joueur doit
+                        survivre le plus de <strong>vagues</strong> possibles en évitant les ennemis.
+                    </div>
+
+                    <div class="project-tech">
+                        <span class="tech-badge">Godot</span>
+                        <span class="tech-badge">C#</span>
+                        <span class="tech-badge">Adobe Photoshop</span>
+                    </div>
+
+                    <div class="project-terminal-section">
+                        <button class="pt-toggle">PLUS D'INFORMATIONS</button>
+                        <div class="project-terminal"></div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://blyskkk.itch.io/poison-plant" target="_blank" class="project-btn">Voir le projet →</a>
+                    </div>
+                </article>
+
+                <article class="project project-featured" data-project="codewarfare">
+                    <div class="project-header">
+                        <img class="project-icon" src="img/icons/zip.png" alt="">
                         <h3 class="project-title">CODE WARFARE</h3>
                         <span class="status-badge status-perso">PROJET PERSONNEL</span>
                     </div>
                     <div class="project-date">2021</div>
-                    <img class="project-banner" src="img/projects/codewarfare.png" alt="CODE WARFARE">
+                    <img class="project-banner" src="img/projects/codewarfare.png" alt="CODE WARFARE" loading="lazy">
+
+                    <div class="project-context">
+                        <span class="ctx-cadre">Projet personnel</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-team">Individuel</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-role">Mon rôle : Développeur & game designer</span>
+                    </div>
 
                     <div class="project-desc">
-                        Tower defense développé entièrement en C/C++ from scratch avec la librairie SFML, sans moteur de jeu. 
-                        L’ensemble des mécaniques de jeu, de la gestion des tours à l’IA des ennemis, 
-                        ainsi que tous les éléments graphiques et logiques, ont été conçus et implémentés manuellement.
+                        Tower defense développé <strong>from scratch</strong> en <strong>C/C++</strong> avec SFML, <strong>sans moteur de jeu</strong>.
+                        Toutes les mécaniques — gestion des tours, IA ennemie, rendu graphique —
+                        ont été conçues et implémentées <strong>manuellement</strong>.
                     </div>
 
                     <div class="project-tech">
@@ -535,24 +752,37 @@
                         <span class="tech-badge">SFML</span>
                     </div>
 
-                    <div class="project-actions">
-                        <a href="" target="_blank" class="project-btn">Voir le projet →</a>
+                    <div class="project-terminal-section">
+                        <button class="pt-toggle">PLUS D’INFORMATIONS</button>
+                        <div class="project-terminal"></div>
                     </div>
-                </div>
 
-                <div class="project project-featured" data-project="omicronbot">
+                    <div class="project-actions">
+                        <a href="https://github.com/Nyuke235/Code-Warfare" target="_blank" class="project-btn">Voir le projet →</a>
+                    </div>
+                </article>
+
+                <article class="project project-featured" data-project="omicronbot">
                     <div class="project-header">
-                        <img class="project-icon" src="img/icons/zip.png">
+                        <img class="project-icon" src="img/icons/zip.png" alt="">
                         <h3 class="project-title">OMICRONBOT</h3>
                         <span class="status-badge status-perso">PROJET PERSONNEL</span>
                     </div>
                     <div class="project-date">2020</div>
-                    <img class="project-banner" src="img/projects/omicronbot.png" alt="OMICRONBOT">
+                    <img class="project-banner" src="img/projects/omicronbot.png" alt="OMICRONBOT" loading="lazy">
+
+                    <div class="project-context">
+                        <span class="ctx-cadre">Projet personnel</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-team">Individuel</span>
+                        <span class="ctx-sep">·</span>
+                        <span class="ctx-role">Mon rôle : Développeur</span>
+                    </div>
 
                     <div class="project-desc">
-                        OmicronBot était mon premier bot Discord. Il permettait aux utilisateurs de jouer à plusieurs
-                        à des mini-jeux interactifs sur Discord, comme par exemple le Puissance 4, pierre-feuille-ciseaux, 
-                        des jeux de logique, et bien d’autres. Il permettait également d’afficher des statistiques mondiales utiles.
+                        Mon <strong>premier bot Discord</strong>, proposant des <strong>mini-jeux multijoueurs</strong> interactifs
+                        (Puissance 4, pierre-feuille-ciseaux, jeux de logique)
+                        et l’affichage de <strong>statistiques mondiales</strong>.
                     </div>
 
                     <div class="project-tech">
@@ -560,14 +790,18 @@
                         <span class="tech-badge">Discord API</span>
                     </div>
 
-                    <div class="project-actions">
-                        <a href="" target="_blank" class="project-btn">Voir le projet →</a>
+                    <div class="project-terminal-section">
+                        <button class="pt-toggle">PLUS D’INFORMATIONS</button>
+                        <div class="project-terminal"></div>
                     </div>
-                </div>
+
+                    <div class="project-actions">
+                        <a href="https://github.com/Nyuke235/OmicronBot" target="_blank" class="project-btn">Voir le projet →</a>
+                    </div>
+                </article>
 
             </div>
-        </div>
-
+        </section>
     </div>
 
     <div id="popup-overlay" class="popup-overlay">
@@ -590,9 +824,15 @@
         </div>
     </div>
 
+    <footer class="site-footer">
+        <p>Dawid Banas &copy; 2026 — Tous droits réservés</p>
+    </footer>
+
     <script src="script/media.js"></script>
     <script src="script/showcase.js"></script>
     <script src="script/terminal.js"></script>
+    <script src="script/rain.js"></script>
+    <script src="script/project-terminal.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,297 @@
+/* =====================================================================
+   MATRIX THEME — green phosphor palette.
+   Structure lives in base.css. Only palette + theme-only effects here.
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rajdhani:wght@500;700&display=swap');
+
+:root {
+    /* fonts */
+    --font-body: 'Rajdhani', 'Fira Code', monospace;
+    --font-header: 'Fira Code', monospace;
+    --font-ui: 'VT323', monospace;
+    --font-mono: 'Fira Code', 'Courier New', monospace;
+
+    /* shared radius */
+    --radius: 2px;
+    --radius-lg: 2px;
+
+    /* base surface */
+    --bg: #010801;
+    --bg-image:
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(0, 255, 0, 0.04), rgba(0, 180, 0, 0.02), rgba(0, 100, 0, 0.04));
+    --bg-size: 100% 2px, 3px 100%;
+    --text: #b0d8b0;
+    --text-muted: #6aa86a;
+    --link-color: #00ff41;
+
+    /* semantic accents */
+    --c-danger: #ff3300;
+    --c-warning: #aacc00;
+    --c-success: #00ff41;
+
+    /* global h1 */
+    --h1-color: #00ff41;
+    --h1-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+    --h1-transform: uppercase;
+    --h1-spacing: 2px;
+
+    /* hero title */
+    --title-size: 4rem;
+    --title-color: #fff;
+    --title-shadow: 2px 0 0 rgba(0, 180, 0, 0.55), -2px 0 0 rgba(0, 255, 65, 0.55), 3px 3px 0 #005500, 0 0 18px rgba(255, 255, 255, 0.35), 0 0 40px rgba(0, 255, 65, 0.2);
+    --subtitle-size: 1.5rem;
+    --subtitle-color: #00ff41;
+
+    /* top bar */
+    --topbar-bg: rgba(0, 8, 0, 0.95);
+    --topbar-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+    --topbar-border: 1px solid #00aa22;
+    --topbar-title-color: #00ff41;
+    --topbar-title-shadow: 0 0 5px #00ff41;
+
+    --topbtn-bg: rgba(0, 255, 65, 0.08);
+    --topbtn-color: #00ff41;
+    --topbtn-border: 1px solid #00ff41;
+    --topbtn-size: 16px;
+    --topbtn-transform: uppercase;
+    --topbtn-hover-bg: #00ff41;
+    --topbtn-hover-color: #000;
+    --topbtn-hover-shadow: 0 0 10px #00ff41;
+
+    --select-bg: rgba(0, 170, 34, 0.1);
+    --select-color: #00cc33;
+    --select-border: 1px solid #00cc33;
+    --select-hover-bg: #00cc33;
+    --select-hover-color: #000;
+
+    /* windows */
+    --window-bg: rgba(0, 12, 0, 0.85);
+    --window-border: 1px solid #00aa22;
+    --window-shadow: 0 0 10px rgba(0, 255, 65, 0.15);
+    --window-blur: blur(5px);
+    --window-content-color: #b0d8b0;
+
+    --winheader-bg: linear-gradient(90deg, #001a00, #003300);
+    --winheader-color: #fff;
+    --winheader-border: 1px solid #00aa22;
+    --winheader-shadow: 0 0 5px #00ff41;
+
+    /* window buttons */
+    --winbtn-size: 16px;
+    --winbtn-font: 10px;
+    --winbtn-radius: 0;
+    --winbtn-border: #fff;
+    --winbtn-bg: transparent;
+    --winbtn-glyph: transparent;
+    --winbtn-hover-glyph: transparent;
+    --winbtn-close-bg: rgba(255, 51, 0, 0.2);
+    --winbtn-minimize-bg: rgba(170, 204, 0, 0.2);
+    --winbtn-maximize-bg: rgba(0, 255, 65, 0.2);
+
+    /* terminal */
+    --term-bg: #000800;
+    --term-color: #00ff41;
+    --term-border: 1px solid #003300;
+    --prompt-color: #00cc33;
+    --term-command-color: #00ff41;
+    --term-output-color: #6aa86a;
+    --term-info-color: #88ffaa;
+    --term-file-color: #fff;
+    --term-file-radius: 0;
+    --term-file-hover-bg: #00ff41;
+    --term-file-hover-color: #000;
+    --cursor-color: #00ff41;
+    --cursor-shadow: 0 0 5px #00ff41;
+    --scrollbar-track: #010801;
+    --scrollbar-thumb: #003300;
+    --scrollbar-thumb-border: 1px solid #00ff41;
+    --scrollbar-radius: 0;
+    --scrollbar-thumb-hover: #00ff41;
+
+    /* readme */
+    --readme-title-color: #00ff41;
+    --readme-summary-size: 1.2rem;
+    --readme-summary-color: #00cc33;
+    --readme-link-color: #00ff41;
+    --contact-btn-color: #00cc33;
+    --contact-btn-hover-color: #00ff41;
+
+    /* app grid */
+    --app-label-color: #00ff41;
+    --app-img-bg: rgba(255, 255, 255, 0.05);
+    --app-img-border: 1px solid rgba(255, 255, 255, 0.1);
+    --app-hover-shadow: 0 0 8px #00ff41;
+
+    /* media list */
+    --media-border: 1px solid rgba(0, 255, 65, 0.08);
+    --media-hover-bg: rgba(0, 255, 65, 0.05);
+    --caret-color: #00ff41;
+    --media-details-bg: rgba(0, 0, 0, 0.3);
+    --media-row-color: #b0d8b0;
+
+    /* projects */
+    --project-divider: #003300;
+    --project-icon-filter: drop-shadow(0 0 2px #00ff41);
+    --project-title-size: 2rem;
+    --project-title-color: #fff;
+    --project-title-shadow: 0 0 5px #00aa22;
+    --project-date-color: #fff;
+    --project-date-shadow: 0 0 4px #00ff41;
+    --banner-height: 180px;
+    --banner-border: 1px solid #00ff41;
+    --banner-shadow: 0 0 10px rgba(0, 255, 65, 0.15);
+    --banner-filter: brightness(0.9) contrast(1.1) hue-rotate(90deg) saturate(0.5);
+    --banner-hover-filter: brightness(1.1) contrast(1.1);
+    --banner-hover-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+    --project-desc-color: #6aa86a;
+    --project-context-accent: #00cc33;
+    --softskills-bg: rgba(0, 255, 65, 0.06);
+    --softskill-color: #00ff41;
+
+    /* project button */
+    --btn-bg: transparent;
+    --btn-border: 1px solid #00ff41;
+    --btn-color: #00ff41;
+    --btn-radius: 0;
+    --btn-transform: uppercase;
+    --btn-spacing: 1px;
+    --btn-hover-bg: #00ff41;
+    --btn-hover-color: #000;
+    --btn-hover-shadow: 0 0 10px #00ff41;
+
+    /* badges */
+    --tech-color: #00cc33;
+    --tech-bg: transparent;
+    --tech-border: 1px solid #00cc33;
+    --tech-project-color: #00ff41;
+    --tech-project-bg: transparent;
+    --tech-project-border: 1px solid #00ff41;
+    --status-school-color: #aacc00;
+    --status-school-bg: transparent;
+    --status-school-border: 1px solid #aacc00;
+    --status-perso-color: #88ffaa;
+    --status-perso-bg: transparent;
+    --status-perso-border: 1px solid #88ffaa;
+    --status-spacing: 1px;
+    --tag-bg: #001a00;
+    --tag-color: #6aa86a;
+
+    /* timeline */
+    --timeline-line: #00aa22;
+    --timeline-line-shadow: 0 0 10px #00aa22;
+    --timeline-line-width: 2px;
+    --edu-color: #00ff41;
+    --work-color: #88ffaa;
+    --dot-bg: #000;
+    --dot-border-width: 2px;
+    --card-bg: rgba(0, 12, 0, 0.9);
+    --card-edge-color: #003300;
+    --card-border-width: 1px;
+    --card-left-width: 4px;
+    --card-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    --card-hover-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
+    --card-glow-size: 16px;
+    --card-blur: blur(5px);
+    --date-color: #00ff41;
+    --date-size: 1.2rem;
+    --date-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+    --timeline-title-color: #fff;
+    --timeline-title-size: 2rem;
+    --timeline-title-transform: uppercase;
+    --timeline-loc-color: #6aa86a;
+    --timeline-loc-filter: invert(1);
+    --timeline-desc-color: #b0d8b0;
+
+    /* discover */
+    --ad-title-color: #00ff41;
+
+    /* popup */
+    --popup-overlay-bg: rgba(0, 8, 0, 0.95);
+    --popup-bg: rgba(0, 12, 0, 0.95);
+    --popup-border: 2px solid #00ff41;
+    --popup-shadow: 0 0 20px #00ff41, 0 0 40px #00aa22;
+    --popup-radius: 0;
+    --popup-title-color: #00ff41;
+    --popup-title-shadow: 0 0 5px #00ff41;
+    --popup-header-border: 1px solid #00ff41;
+    --popup-close-color: #ff3300;
+    --popup-close-hover-color: #000;
+    --popup-close-hover-shadow: 0 0 10px #ff3300;
+    --popup-img-bg: rgba(0, 0, 0, 0.4);
+    --popup-img-border: 1px solid #00ff41;
+    --popup-img-shadow: 0 0 12px rgba(0, 255, 65, 0.5);
+    --popup-content-color: #6aa86a;
+    --popup-like-title-color: #00ff41;
+    --popup-like-title-shadow: 0 0 6px #00ff41;
+    --popup-like-border: 3px solid #00ff41;
+    --popup-like-pad: 8px;
+    --popup-like-color: #88ffaa;
+    --popup-like-style: italic;
+}
+
+/* ================= THEME-ONLY EFFECTS ================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+        radial-gradient(60% 50% at 12% -5%, rgba(0, 255, 65, 0.07), transparent 70%),
+        radial-gradient(55% 45% at 105% 108%, rgba(0, 170, 34, 0.10), transparent 70%),
+        linear-gradient(rgba(0, 170, 34, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+}
+
+.led-scanline {
+    position: relative;
+    z-index: 1;
+    font-family: 'Fira Code', monospace;
+    animation: ledFlicker 8s infinite;
+}
+
+.led-scanline::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 2px,
+        rgba(0, 0, 0, 0.18) 3px,
+        rgba(0, 0, 0, 0.18) 4px
+    );
+    animation: scanlineMove 0.9s linear infinite;
+}
+
+@keyframes ledFlicker {
+    0%,  100% { opacity: 1;    }
+    4%         { opacity: 0.82; }
+    4.3%       { opacity: 1;    }
+    28%        { opacity: 1;    }
+    28.2%      { opacity: 0.45; }
+    28.5%      { opacity: 1;    }
+    28.7%      { opacity: 0.7;  }
+    29%        { opacity: 1;    }
+    68%        { opacity: 1;    }
+    68.2%      { opacity: 0.6;  }
+    68.5%      { opacity: 1;    }
+}
+
+@keyframes scanlineMove {
+    0%   { background-position-y: 0; }
+    100% { background-position-y: 4px; }
+}
+
+@keyframes highlightAnim {
+    0%   { box-shadow: 0 0 0 0 rgba(0, 255, 65, 0); border-color: #00aa22; }
+    50%  { box-shadow: 0 0 20px 5px rgba(0, 255, 65, 0.5); border-color: #00ff41; }
+    100% { box-shadow: 0 0 10px rgba(0, 170, 34, 0.3); border-color: #00aa22; }
+}

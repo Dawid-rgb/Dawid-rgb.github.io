@@ -1,0 +1,297 @@
+/* =====================================================================
+   AMBER THEME — warm amber/orange palette.
+   Structure lives in base.css. Only palette + theme-only effects here.
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rajdhani:wght@500;700&display=swap');
+
+:root {
+    /* fonts */
+    --font-body: 'Rajdhani', 'Fira Code', monospace;
+    --font-header: 'Fira Code', monospace;
+    --font-ui: 'VT323', monospace;
+    --font-mono: 'Fira Code', 'Courier New', monospace;
+
+    /* shared radius */
+    --radius: 2px;
+    --radius-lg: 2px;
+
+    /* base surface */
+    --bg: #060401;
+    --bg-image:
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 100, 0, 0.06), rgba(255, 180, 0, 0.02), rgba(200, 80, 0, 0.06));
+    --bg-size: 100% 2px, 3px 100%;
+    --text: #e8d8b0;
+    --text-muted: #c4a86a;
+    --link-color: #ffb300;
+
+    /* semantic accents */
+    --c-danger: #ff3300;
+    --c-warning: #ffdd00;
+    --c-success: #aacc00;
+
+    /* global h1 */
+    --h1-color: #ffb300;
+    --h1-shadow: 0 0 10px rgba(255, 179, 0, 0.5);
+    --h1-transform: uppercase;
+    --h1-spacing: 2px;
+
+    /* hero title */
+    --title-size: 4rem;
+    --title-color: #fff;
+    --title-shadow: 2px 0 0 rgba(255, 80, 0, 0.55), -2px 0 0 rgba(255, 200, 0, 0.55), 3px 3px 0 #ff6d00, 0 0 18px rgba(255, 255, 255, 0.35), 0 0 40px rgba(255, 179, 0, 0.2);
+    --subtitle-size: 1.5rem;
+    --subtitle-color: #ffb300;
+
+    /* top bar */
+    --topbar-bg: rgba(15, 8, 0, 0.95);
+    --topbar-shadow: 0 0 15px rgba(255, 109, 0, 0.4);
+    --topbar-border: 1px solid #ff6d00;
+    --topbar-title-color: #ff6d00;
+    --topbar-title-shadow: 0 0 5px #ff6d00;
+
+    --topbtn-bg: rgba(255, 179, 0, 0.1);
+    --topbtn-color: #ffb300;
+    --topbtn-border: 1px solid #ffb300;
+    --topbtn-size: 16px;
+    --topbtn-transform: uppercase;
+    --topbtn-hover-bg: #ffb300;
+    --topbtn-hover-color: #000;
+    --topbtn-hover-shadow: 0 0 10px #ffb300;
+
+    --select-bg: rgba(255, 109, 0, 0.1);
+    --select-color: #ff6d00;
+    --select-border: 1px solid #ff6d00;
+    --select-hover-bg: #ff6d00;
+    --select-hover-color: #fff;
+
+    /* windows */
+    --window-bg: rgba(20, 10, 0, 0.85);
+    --window-border: 1px solid #ff6d00;
+    --window-shadow: 0 0 10px rgba(255, 109, 0, 0.2);
+    --window-blur: blur(5px);
+    --window-content-color: #e8d8b0;
+
+    --winheader-bg: linear-gradient(90deg, #3d1a00, #7a3500);
+    --winheader-color: #fff;
+    --winheader-border: 1px solid #ff6d00;
+    --winheader-shadow: 0 0 5px #ffb300;
+
+    /* window buttons */
+    --winbtn-size: 16px;
+    --winbtn-font: 10px;
+    --winbtn-radius: 0;
+    --winbtn-border: #fff;
+    --winbtn-bg: transparent;
+    --winbtn-glyph: transparent;
+    --winbtn-hover-glyph: transparent;
+    --winbtn-close-bg: rgba(255, 51, 0, 0.2);
+    --winbtn-minimize-bg: rgba(255, 221, 0, 0.2);
+    --winbtn-maximize-bg: rgba(170, 204, 0, 0.2);
+
+    /* terminal */
+    --term-bg: #060200;
+    --term-color: #ffb300;
+    --term-border: 1px solid #3a2000;
+    --prompt-color: #ff6d00;
+    --term-command-color: #ffb300;
+    --term-output-color: #c4a86a;
+    --term-info-color: #ffd54f;
+    --term-file-color: #fff;
+    --term-file-radius: 0;
+    --term-file-hover-bg: #ffb300;
+    --term-file-hover-color: #000;
+    --cursor-color: #ffb300;
+    --cursor-shadow: 0 0 5px #ffb300;
+    --scrollbar-track: #111;
+    --scrollbar-thumb: #3a2000;
+    --scrollbar-thumb-border: 1px solid #ffb300;
+    --scrollbar-radius: 0;
+    --scrollbar-thumb-hover: #ffb300;
+
+    /* readme */
+    --readme-title-color: #ffb300;
+    --readme-summary-size: 1.2rem;
+    --readme-summary-color: #ff6d00;
+    --readme-link-color: #ffb300;
+    --contact-btn-color: #ff6d00;
+    --contact-btn-hover-color: #ffb300;
+
+    /* app grid */
+    --app-label-color: #ffb300;
+    --app-img-bg: rgba(255, 255, 255, 0.05);
+    --app-img-border: 1px solid rgba(255, 255, 255, 0.2);
+    --app-hover-shadow: 0 0 8px #ffb300;
+
+    /* media list */
+    --media-border: 1px solid rgba(255, 255, 255, 0.05);
+    --media-hover-bg: rgba(255, 255, 255, 0.05);
+    --caret-color: #ffb300;
+    --media-details-bg: rgba(0, 0, 0, 0.3);
+    --media-row-color: #ddd;
+
+    /* projects */
+    --project-divider: #2a1500;
+    --project-icon-filter: drop-shadow(0 0 2px #fff);
+    --project-title-size: 2rem;
+    --project-title-color: #fff;
+    --project-title-shadow: 0 0 5px #ff6d00;
+    --project-date-color: #fff;
+    --project-date-shadow: 0 0 4px #fff;
+    --banner-height: 180px;
+    --banner-border: 1px solid #ffb300;
+    --banner-shadow: 0 0 10px rgba(255, 179, 0, 0.2);
+    --banner-filter: brightness(0.9) contrast(1.1);
+    --banner-hover-filter: brightness(1.1) contrast(1.1);
+    --banner-hover-shadow: 0 0 15px rgba(255, 179, 0, 0.4);
+    --project-desc-color: #c4a86a;
+    --project-context-accent: #ff6d00;
+    --softskills-bg: rgba(255, 109, 0, 0.07);
+    --softskill-color: #ffb300;
+
+    /* project button */
+    --btn-bg: transparent;
+    --btn-border: 1px solid #ffb300;
+    --btn-color: #ffb300;
+    --btn-radius: 0;
+    --btn-transform: uppercase;
+    --btn-spacing: 1px;
+    --btn-hover-bg: #ffb300;
+    --btn-hover-color: #000;
+    --btn-hover-shadow: 0 0 10px #ffb300;
+
+    /* badges */
+    --tech-color: #ff6d00;
+    --tech-bg: transparent;
+    --tech-border: 1px solid #ff6d00;
+    --tech-project-color: #ffb300;
+    --tech-project-bg: transparent;
+    --tech-project-border: 1px solid #ffb300;
+    --status-school-color: #ffdd00;
+    --status-school-bg: transparent;
+    --status-school-border: 1px solid #ffdd00;
+    --status-perso-color: #ffd54f;
+    --status-perso-bg: transparent;
+    --status-perso-border: 1px solid #ffd54f;
+    --status-spacing: 1px;
+    --tag-bg: #2a1500;
+    --tag-color: #c4a86a;
+
+    /* timeline */
+    --timeline-line: #ff6d00;
+    --timeline-line-shadow: 0 0 10px #ff6d00;
+    --timeline-line-width: 2px;
+    --edu-color: #ffb300;
+    --work-color: #ff3300;
+    --dot-bg: #000;
+    --dot-border-width: 2px;
+    --card-bg: rgba(20, 8, 0, 0.9);
+    --card-edge-color: #2a1500;
+    --card-border-width: 1px;
+    --card-left-width: 4px;
+    --card-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    --card-hover-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
+    --card-glow-size: 16px;
+    --card-blur: blur(5px);
+    --date-color: #ffb300;
+    --date-size: 1.2rem;
+    --date-shadow: 0 0 5px rgba(255, 179, 0, 0.5);
+    --timeline-title-color: #fff;
+    --timeline-title-size: 2rem;
+    --timeline-title-transform: uppercase;
+    --timeline-loc-color: #c4a86a;
+    --timeline-loc-filter: invert(1);
+    --timeline-desc-color: #ddd;
+
+    /* discover */
+    --ad-title-color: #ffb300;
+
+    /* popup */
+    --popup-overlay-bg: rgba(15, 8, 0, 0.95);
+    --popup-bg: rgba(20, 8, 0, 0.95);
+    --popup-border: 2px solid #ffb300;
+    --popup-shadow: 0 0 20px #ffb300, 0 0 40px #ff6d00;
+    --popup-radius: 0;
+    --popup-title-color: #ffb300;
+    --popup-title-shadow: 0 0 5px #ffb300;
+    --popup-header-border: 1px solid #ffb300;
+    --popup-close-color: #ff3300;
+    --popup-close-hover-color: #000;
+    --popup-close-hover-shadow: 0 0 10px #ff3300;
+    --popup-img-bg: rgba(0, 0, 0, 0.4);
+    --popup-img-border: 1px solid #ffb300;
+    --popup-img-shadow: 0 0 12px rgba(255, 179, 0, 0.6);
+    --popup-content-color: #c4a86a;
+    --popup-like-title-color: #ffb300;
+    --popup-like-title-shadow: 0 0 6px #ffb300;
+    --popup-like-border: 3px solid #ffb300;
+    --popup-like-pad: 8px;
+    --popup-like-color: #ffd54f;
+    --popup-like-style: italic;
+}
+
+/* ================= THEME-ONLY EFFECTS ================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+        radial-gradient(60% 50% at 12% -5%, rgba(255, 179, 0, 0.08), transparent 70%),
+        radial-gradient(55% 45% at 105% 108%, rgba(255, 109, 0, 0.12), transparent 70%),
+        linear-gradient(rgba(255, 109, 0, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 179, 0, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+}
+
+.led-scanline {
+    position: relative;
+    z-index: 1;
+    font-family: 'Fira Code', monospace;
+    animation: ledFlicker 8s infinite;
+}
+
+.led-scanline::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 2px,
+        rgba(0, 0, 0, 0.18) 3px,
+        rgba(0, 0, 0, 0.18) 4px
+    );
+    animation: scanlineMove 0.9s linear infinite;
+}
+
+@keyframes ledFlicker {
+    0%,  100% { opacity: 1;    }
+    4%         { opacity: 0.82; }
+    4.3%       { opacity: 1;    }
+    28%        { opacity: 1;    }
+    28.2%      { opacity: 0.45; }
+    28.5%      { opacity: 1;    }
+    28.7%      { opacity: 0.7;  }
+    29%        { opacity: 1;    }
+    68%        { opacity: 1;    }
+    68.2%      { opacity: 0.6;  }
+    68.5%      { opacity: 1;    }
+}
+
+@keyframes scanlineMove {
+    0%   { background-position-y: 0; }
+    100% { background-position-y: 4px; }
+}
+
+@keyframes highlightAnim {
+    0%   { box-shadow: 0 0 0 0 rgba(255, 179, 0, 0); border-color: #ff6d00; }
+    50%  { box-shadow: 0 0 20px 5px rgba(255, 179, 0, 0.6); border-color: #ffb300; }
+    100% { box-shadow: 0 0 10px rgba(255, 109, 0, 0.3); border-color: #ff6d00; }
+}

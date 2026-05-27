@@ -1,102 +1,114 @@
-const themeSelector = document.getElementById('theme-selector');
-const themeLink = document.getElementById('theme-link');
+// Wrapped in an IIFE so symbols stay local (no globals leak) while still
+// working over file://. Loaded at end of <body>, so the DOM is ready.
+(() => {
+"use strict";
 
-themeSelector.addEventListener('change', (e) => {
-    const selectedTheme = e.target.value;
-    themeLink.href = selectedTheme;
-});
+const CAROUSEL_INTERVAL = 3000;
 
-const apps = document.querySelectorAll('.app');
-const popupOverlay = document.getElementById('popup-overlay');
-const popupTitle = document.getElementById('popup-title');
-const popupImage = document.getElementById('popup-image');
-const popupDescription = document.getElementById('popup-description');
-const popupLike = document.getElementById('popup-like');
-const popupClose = document.getElementById('popup-close');
+/* ---------- Theme selector ---------- */
+function initThemeSelector() {
+    const selector = document.getElementById('theme-selector');
+    const themeLink = document.getElementById('theme-link');
+    if (!selector || !themeLink) return;
 
-apps.forEach(app => {
-    app.addEventListener('click', () => {
-        popupTitle.textContent = app.dataset.title;
-        popupImage.src = app.dataset.image;
-        popupDescription.textContent = app.dataset.description;
-        popupLike.textContent = app.dataset.like;
-
-        popupOverlay.style.display = 'flex';
+    selector.addEventListener('change', (e) => {
+        themeLink.href = e.target.value;
     });
-});
+}
 
-popupClose.addEventListener('click', () => {
-    popupOverlay.style.display = 'none';
-});
+/* ---------- Centres d'intérêt popup ---------- */
+function initInterestPopup() {
+    const overlay = document.getElementById('popup-overlay');
+    if (!overlay) return;
 
-popupOverlay.addEventListener('click', (e) => {
-    if (e.target === popupOverlay) {
-        popupOverlay.style.display = 'none';
-    }
-});
+    const title = document.getElementById('popup-title');
+    const image = document.getElementById('popup-image');
+    const description = document.getElementById('popup-description');
+    const like = document.getElementById('popup-like');
+    const closeBtn = document.getElementById('popup-close');
 
+    const open = (app) => {
+        title.textContent = app.dataset.title;
+        image.src = app.dataset.image;
+        description.textContent = app.dataset.description;
+        like.textContent = app.dataset.like;
+        overlay.style.display = 'flex';
+    };
 
+    const close = () => { overlay.style.display = 'none'; };
 
-document.addEventListener("DOMContentLoaded", () => {
-    const entries = document.querySelectorAll(".media-entry");
+    document.querySelectorAll('.app').forEach(app => {
+        app.addEventListener('click', () => open(app));
+    });
+
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) close();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+    });
+}
+
+/* ---------- Skills accordion ---------- */
+function initSkillsAccordion() {
+    const entries = document.querySelectorAll('.media-entry');
 
     entries.forEach(entry => {
-        entry.addEventListener("click", () => {
+        entry.addEventListener('click', () => {
+            const details = document.getElementById(entry.dataset.target);
+            const wasOpen = entry.classList.contains('active');
 
-            const targetID = entry.dataset.target;
-            const details = document.getElementById(targetID);
-            const icon = entry.querySelector(".media-icon");
-
-            const isOpen = entry.classList.contains("active");
-
-            document.querySelectorAll(".media-entry").forEach(e => {
-                e.classList.remove("active");
-                const iconEl = e.querySelector(".media-icon");
-                if (iconEl) iconEl.src = "img/icons/folder_close.png";
+            // Close every entry first.
+            entries.forEach(e => {
+                e.classList.remove('active');
+                const icon = e.querySelector('.media-icon');
+                if (icon) icon.src = 'img/icons/folder_close.png';
             });
+            document.querySelectorAll('.media-details').forEach(d => d.classList.remove('active'));
 
-            document.querySelectorAll(".media-details").forEach(d => {
-                d.classList.remove("active");
-            });
-
-            if (!isOpen) {
-                entry.classList.add("active");
-                details.classList.add("active");
-                if (icon) icon.src = "img/icons/folder_open.png";
+            // Re-open the clicked one unless it was already open.
+            if (!wasOpen) {
+                entry.classList.add('active');
+                if (details) details.classList.add('active');
+                const icon = entry.querySelector('.media-icon');
+                if (icon) icon.src = 'img/icons/folder_open.png';
             }
         });
     });
-});
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-    const projects = document.querySelectorAll("#discover-window .project-ad");
+/* ---------- "Découvrez mes projets" carousel ---------- */
+function initDiscoverCarousel() {
+    const ads = document.querySelectorAll('#discover-window .project-ad');
+    if (!ads.length) return;
+
     let index = 0;
+    ads.forEach((ad, i) => {
+        ad.classList.remove('show', 'hide');
+        if (i === 0) ad.classList.add('show');
 
-    projects.forEach((p, i) => {
-        p.classList.remove("show", "hide");
-        if (i === 0) p.classList.add("show");
+        // Clicking an ad jumps to its featured project.
+        ad.addEventListener('click', () => {
+            const target = document.querySelector(`.project-featured[data-project="${ad.dataset.project}"]`);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
     });
 
-    function showNextProject() {
-        projects[index].classList.remove("show");
-        projects[index].classList.add("hide");
+    const showNext = () => {
+        ads[index].classList.replace('show', 'hide');
+        index = (index + 1) % ads.length;
+        ads[index].classList.remove('hide');
+        ads[index].classList.add('show');
+        setTimeout(showNext, CAROUSEL_INTERVAL);
+    };
 
-        index = (index + 1) % projects.length;
-        projects[index].classList.remove("hide");
-        projects[index].classList.add("show");
+    setTimeout(showNext, CAROUSEL_INTERVAL);
+}
 
-        setTimeout(showNextProject, 3000);
-    }
+initThemeSelector();
+initInterestPopup();
+initSkillsAccordion();
+initDiscoverCarousel();
 
-    setTimeout(showNextProject, 3000);
-});
-
-document.querySelectorAll('.project-ad').forEach(ad => {
-    ad.addEventListener('click', () => {
-        const targetProject = ad.dataset.project;
-        const projectEl = document.querySelector(`.project-featured[data-project="${targetProject}"]`);
-        if (projectEl) {
-            projectEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-    });
-});
+})();
