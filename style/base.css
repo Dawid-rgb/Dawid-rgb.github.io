@@ -275,12 +275,7 @@ img {
 }
 
 .cursor {
-    display: inline-block;
-    width: 8px;
-    height: 1em;
-    margin-left: 2px;
-    vertical-align: bottom;
-    background-color: var(--cursor-color);
+    color: var(--cursor-color);
     box-shadow: var(--cursor-shadow, none);
     animation: blink 1s steps(2, start) infinite;
 }
@@ -566,10 +561,10 @@ img {
     color: var(--term-info-color, #00d1ff);
     padding: 5px 14px;
     font-size: 0.72rem;
-    font-family: var(--font-mono);
+    font-family: var(--font-ui);
     cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: var(--btn-spacing, 1.5px);
     transition: background 0.15s, color 0.15s, box-shadow 0.15s;
     border-radius: var(--radius, 2px);
     box-sizing: border-box;

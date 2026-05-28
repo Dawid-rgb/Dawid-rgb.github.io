@@ -1,5 +1,3 @@
-// Wrapped in an IIFE so symbols stay local (no globals leak) while still
-// working over file://. Loaded at end of <body>, so the DOM is ready.
 (() => {
 "use strict";
 

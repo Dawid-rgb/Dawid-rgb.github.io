@@ -3,14 +3,13 @@
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-/* ── project data ─────────────────────────────────────────────── */
 const DATA = {
     talesofdanmaku: {
         name: 'talesofdanmaku.ts',
         competences: [
-            ['Persévérance',            'implémenter de zéro la logique bullet hell (centaines de projectiles simultanés)'],
+            ['Persévérance',             'implémenter la logique bullet hell (centaines de projectiles simultanés)'],
             ["Capacité d'apprentissage", 'maîtriser TypeScript, Vite et Tauri en contexte de SAÉ'],
-            ['Autonomie',               "finaliser seul après la dissolution de l'équipe initiale"],
+            ['Autonomie',                "finaliser seul après la dissolution de l'équipe initiale"],
         ],
         resultats: [
             "Jeu solo/multijoueur déployé sur navigateur et en app desktop via Tauri",
@@ -27,7 +26,7 @@ const DATA = {
         name: 'mizutwitter.js',
         competences: [
             ['Autonomie',              'conception et développement complets sans guidance externe'],
-            ['Curiosité',              "explorer les APIs d'extension navigateur, territoire peu documenté"],
+            ['Curiosité',              "explorer les APIs d'extension navigateur"],
             ['Attention à la qualité', 'interface de thèmes cohérente et agréable pour les utilisateurs'],
         ],
         resultats: [
@@ -46,16 +45,16 @@ const DATA = {
         competences: [
             ['Adaptabilité',    "s'ajuster au rythme et au niveau de chacun dans le trinôme"],
             ["Esprit d'équipe", 'cohérence de code et répartition des tâches à trois'],
-            ['Organisation',   'planifier les algorithmes en parallèle du travail des autres'],
+            ['Organisation',    'planifier les algorithmes en parallèle du travail des autres'],
         ],
         resultats: [
             'Application Java livrée dans les délais avec plusieurs algorithmes de génération',
             'Interface JavaFX jouable : mode progression et mode libre fonctionnels',
-            'Coordination réussie entre trois développeurs, rendu cohérent',
+            'Coordination réussie entre 3 développeurs, rendu cohérent',
         ],
         reflexive: [
             ['Acquis',    'algorithmes de graphes et coordination de code en trinôme'],
-            ['Défi',      'cohérence visuelle et technique entre trois développeurs'],
+            ['Défi',      'cohérence visuelle et technique entre 3 développeurs'],
             ['À refaire', 'conventions de code et architecture commune dès le lancement'],
         ],
     },
@@ -63,7 +62,7 @@ const DATA = {
         name: 'googlegreen.html',
         competences: [
             ['Attention à la qualité', "reproduire l'identité visuelle Google en HTML/CSS pur, sans framework"],
-            ['Organisation',          'répartir les pages et responsabilités au sein du binôme'],
+            ['Organisation',           'répartir les pages et responsabilités au sein du binôme'],
             ["Esprit d'équipe",        'coordonner contenu et design pour un rendu cohérent'],
         ],
         resultats: [
@@ -116,8 +115,8 @@ const DATA = {
     codewarfare: {
         name: 'codewarfare.c',
         competences: [
-            ['Persévérance',            'implémenter chaque mécanique from scratch sans moteur de jeu'],
-            ['Attention à la qualité',  'architecture soignée pour gérer la complexité croissante'],
+            ['Persévérance',             'implémenter chaque mécanique from scratch sans moteur de jeu'],
+            ['Attention à la qualité',   'architecture soignée pour gérer la complexité croissante'],
             ["Capacité d'apprentissage", 'maîtrise progressive de SFML et des structures de données nécessaires'],
         ],
         resultats: [
@@ -134,14 +133,14 @@ const DATA = {
     omicronbot: {
         name: 'omicronbot.js',
         competences: [
-            ['Curiosité',               "découverte de Node.js et de l'API Discord par intérêt propre"],
-            ["Capacité d'apprentissage", "prise en main autonome d'un environnement inconnu sans formation"],
-            ['Persévérance',            'projet mené jusqu\'au bout malgré les obstacles de débutant'],
+            ['Curiosité',                "découverte de Node.js et de l'API Discord par intérêt propre"],
+            ["Capacité d'apprentissage", "prise en main autonome d'un environnement inconnu"],
+            ['Persévérance',             'projet mené jusqu\'au bout malgré les obstacles de débutant'],
         ],
         resultats: [
             'Bot déployé sur plusieurs serveurs avec mini-jeux multijoueurs en temps réel',
             'Puissance 4, pierre-feuille-ciseaux et jeux de logique fonctionnels',
-            'Premier projet Node.js mené de A à Z sans accompagnement',
+            'Premier projet Node.js mené de A à Z',
         ],
         reflexive: [
             ['Acquis',    "programmation asynchrone Node.js et intégration d'API tierce"],
@@ -151,7 +150,6 @@ const DATA = {
     },
 };
 
-/* ── DOM helpers ──────────────────────────────────────────────── */
 function ln(term, html, cls = 'pt-out') {
     const d = document.createElement('div');
     d.className = cls;
@@ -191,16 +189,24 @@ async function loadBar(term) {
 async function waitClick(term) {
     ln(term, '▌ cliquez pour continuer', 'pt-enter-line');
     await new Promise(resolve => {
-        term._continueResolve = resolve;
+        function handler(e) {
+            if (e.target.classList.contains('pt-reset-line')) return;
+            term.removeEventListener('click', handler);
+            delete term._clickHandler;
+            term.innerHTML = '';
+            resolve();
+        }
+        if (term._clickHandler) term.removeEventListener('click', term._clickHandler);
+        term._clickHandler = handler;
+        term.addEventListener('click', handler);
     });
 }
 
-/* ── sequence ─────────────────────────────────────────────────── */
 async function run(term, projectId) {
     const d = DATA[projectId];
     if (!d) return;
 
-    /* BOOT */
+    // BOOT
     await typeCmd(term, `boot project-analysis.sh ${d.name}`);
     await sleep(180);
     await loadBar(term);
@@ -208,7 +214,7 @@ async function run(term, projectId) {
     ln(term, '&gt; Système initialisé. Fichiers chargés.', 'pt-info');
     await sleep(320);
 
-    /* COMPÉTENCES */
+    // SKILLS
     await typeCmd(term, 'cat competences.log');
     await sleep(160);
     ln(term, '╔══ COMPÉTENCES MOBILISÉES ════════════════════╗', 'pt-section');
@@ -219,7 +225,7 @@ async function run(term, projectId) {
     await sleep(220);
     await waitClick(term);
 
-    /* RÉSULTATS */
+    // RESULTS
     await typeCmd(term, 'cat resultats.log');
     await sleep(160);
     ln(term, '╔══ RÉSULTATS ══════════════════════════════════╗', 'pt-section');
@@ -230,7 +236,7 @@ async function run(term, projectId) {
     await sleep(220);
     await waitClick(term);
 
-    /* ANALYSE RÉFLEXIVE */
+    // ANALYSIS
     await typeCmd(term, 'cat reflexion.log');
     await sleep(160);
     ln(term, '╔══ ANALYSE RÉFLEXIVE ══════════════════════════╗', 'pt-section');
@@ -239,7 +245,7 @@ async function run(term, projectId) {
         ln(term, `&gt;&gt; <span class="pt-lbl">${lbl}</span> — ${desc}`);
     }
 
-    /* CRASH */
+    // CRASH
     await sleep(800);
     ln(term, '');
     await sleep(180);
@@ -262,14 +268,16 @@ async function run(term, projectId) {
 
     resetLine.addEventListener('click', e => {
         e.stopPropagation();
+        if (term._clickHandler) {
+            term.removeEventListener('click', term._clickHandler);
+            delete term._clickHandler;
+        }
         term.innerHTML = '';
-        term._continueResolve = null;
         term.dataset.state = 'running';
         run(term, projectId);
     });
 }
 
-/* ── init ─────────────────────────────────────────────────────── */
 document.querySelectorAll('.project-terminal-section').forEach(section => {
     const projectId = section.closest('.project-featured').dataset.project;
     const toggleBtn = section.querySelector('.pt-toggle');
@@ -282,7 +290,10 @@ document.querySelectorAll('.project-terminal-section').forEach(section => {
         if (open) {
             term.classList.remove('open', 'pt-expanded');
             toggleBtn.classList.remove('active');
-            term._continueResolve = null;
+            if (term._clickHandler) {
+                term.removeEventListener('click', term._clickHandler);
+                delete term._clickHandler;
+            }
         } else {
             term.classList.add('open', 'pt-expanded');
             toggleBtn.classList.add('active');
@@ -293,15 +304,6 @@ document.querySelectorAll('.project-terminal-section').forEach(section => {
         }
     });
 
-    term.addEventListener('click', e => {
-        if (e.target.classList.contains('pt-reset-line')) return;
-        if (term._continueResolve) {
-            const resolve = term._continueResolve;
-            term._continueResolve = null;
-            term.innerHTML = '';
-            resolve();
-        }
-    });
 });
 
 })();

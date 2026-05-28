@@ -52,7 +52,7 @@ function outputHTML(html, className = "terminal-output") {
 
 async function typeCommand(command) {
     const line = document.createElement("div");
-    line.innerHTML = `<span class="prompt">$</span> <span class="terminal-command"></span><span class="cursor"></span>`;
+    line.innerHTML = `<span class="prompt">$</span> <span class="terminal-command"></span><span class="cursor">█</span>`;
     terminal.appendChild(line);
 
     const commandSpan = line.querySelector(".terminal-command");
@@ -69,7 +69,7 @@ async function typeCommand(command) {
 
 function idlePrompt() {
     const line = document.createElement("div");
-    line.innerHTML = `<span class="prompt">$</span> <span class="cursor"></span>`;
+    line.innerHTML = `<span class="prompt">$</span> <span class="cursor">█</span>`;
     terminal.appendChild(line);
     scrollToBottom();
 }

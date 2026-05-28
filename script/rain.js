@@ -1,5 +1,3 @@
-// Realistic rain — active only when the cyberpunk theme is loaded.
-// Canvas sits at z-index:-1 (below normal-flow content, above body background).
 (() => {
 "use strict";
 
@@ -10,8 +8,6 @@ const SIN_W = Math.sin(WIND_ANGLE);
 const COS_W = Math.cos(WIND_ANGLE);
 
 let canvas = null, ctx = null, raf = null, drops = [];
-
-/* ── canvas setup ──────────────────────────────────────── */
 
 function createCanvas() {
     canvas = document.createElement('canvas');
@@ -30,8 +26,6 @@ function resize() {
     drops = Array.from({length: DROP_COUNT}, () => spawnDrop(true));
 }
 
-/* ── drop factory ─────────────────────────────────────── */
-
 function spawnDrop(scatter) {
     const speed   = 10 + Math.random() * 10;
     const len     = 14 + Math.random() * 22;
@@ -45,8 +39,6 @@ function spawnDrop(scatter) {
         opacity,
     };
 }
-
-/* ── render loop ──────────────────────────────────────── */
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -68,8 +60,6 @@ function draw() {
     raf = requestAnimationFrame(draw);
 }
 
-/* ── start / stop ─────────────────────────────────────── */
-
 function start() {
     if (raf) return;
     if (!canvas) createCanvas();
@@ -88,8 +78,6 @@ function isCyberpunk() {
     const href = link.getAttribute('href') || link.href;
     return href.includes(CYBERPUNK);
 }
-
-/* ── observe theme changes ────────────────────────────── */
 
 const themeLink = document.getElementById('theme-link');
 if (themeLink) {
