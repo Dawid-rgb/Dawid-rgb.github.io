@@ -74,15 +74,50 @@ function initSkillsAccordion() {
 }
 
 function initDiscoverCarousel() {
+    const container = document.querySelector('#discover-window .discover-content');
     const ads = document.querySelectorAll('#discover-window .project-ad');
     if (!ads.length) return;
 
+    /* canvas bruit */
+    const canvas = document.createElement('canvas');
+    canvas.className = 'tv-static-canvas';
+    container.appendChild(canvas);
+
+    function resizeCanvas() {
+        canvas.width  = Math.max(container.offsetWidth, 1);
+        canvas.height = Math.max(container.offsetHeight, 1);
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const ctx = canvas.getContext('2d');
+    let noiseActive = false;
+    let raf = null;
+
+    function drawNoise() {
+        const w = canvas.width, h = canvas.height;
+        const img = ctx.createImageData(w, h);
+        const d = img.data;
+        for (let i = 0; i < d.length; i += 4) {
+            const v = Math.random() * 255 | 0;
+            d[i] = d[i+1] = d[i+2] = v;
+            d[i+3] = 255;
+        }
+        ctx.putImageData(img, 0, 0);
+    }
+
+    function loopNoise() {
+        if (!noiseActive) return;
+        drawNoise();
+        raf = requestAnimationFrame(loopNoise);
+    }
+
     let index = 0;
+    let busy  = false;
+
     ads.forEach((ad, i) => {
         ad.classList.remove('show', 'hide');
         if (i === 0) ad.classList.add('show');
-
-        // Clicking an ad jumps to its featured project
         ad.addEventListener('click', () => {
             const target = document.querySelector(`.project-featured[data-project="${ad.dataset.project}"]`);
             if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -90,11 +125,32 @@ function initDiscoverCarousel() {
     });
 
     const showNext = () => {
-        ads[index].classList.replace('show', 'hide');
-        index = (index + 1) % ads.length;
-        ads[index].classList.remove('hide');
-        ads[index].classList.add('show');
-        setTimeout(showNext, CAROUSEL_INTERVAL);
+        if (busy) return;
+        busy = true;
+
+        /* démarrer le bruit */
+        resizeCanvas();
+        noiseActive = true;
+        canvas.style.opacity = '1';
+        loopNoise();
+
+        /* swap image au milieu du bruit */
+        setTimeout(() => {
+            ads[index].classList.remove('show');
+            ads[index].classList.add('hide');
+            index = (index + 1) % ads.length;
+            ads[index].classList.remove('hide');
+            ads[index].classList.add('show');
+        }, 200);
+
+        /* arrêter le bruit */
+        setTimeout(() => {
+            noiseActive = false;
+            cancelAnimationFrame(raf);
+            canvas.style.opacity = '0';
+            busy = false;
+            setTimeout(showNext, CAROUSEL_INTERVAL);
+        }, 400);
     };
 
     setTimeout(showNext, CAROUSEL_INTERVAL);
